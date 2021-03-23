@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "436893003342",
+    "project_id": "exmoker-60442",
+    "storage_bucket": "exmoker-60442.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:436893003342:android:91335dd1e8daa010631d1f",
+        "android_client_info": {
+          "package_name": "br.com.ifsul.bruna.exmoker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "436893003342-n8a25hffdbvinqb6bmre0d9oe7o942uc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcyvQ7YL8uSE8JSpDkdbEJQ5EQ8Ys0IM4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "436893003342-n8a25hffdbvinqb6bmre0d9oe7o942uc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
