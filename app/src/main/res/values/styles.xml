@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextInputLayout" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textColorHint">@color/white</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/border_radius_input</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/border_radius_input</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/border_radius_input</item>
+        <item name="boxCornerRadiusTopStart">@dimen/border_radius_input</item>
+        <item name="boxStrokeColor">@color/white</item>
+        <item name="endIconTint">@color/white</item>
+        <item name="startIconTint">@color/white</item>
+        <item name="errorEnabled">true</item>
+        <item name="endIconMode">clear_text</item>
+    </style>
+
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/exmoker</item>
+    </style>
+</resources>
