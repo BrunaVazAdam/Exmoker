@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/btb_home"
+        android:contentDescription="Home"
+        android:icon="@drawable/ic_home"
+        android:title="Home"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/btb_achievement"
+        android:contentDescription="Conquistas"
+        android:icon="@drawable/ic_badge"
+        android:title="Conquistas"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/itemEmpty"
+        android:checkable="false"
+        android:title="" />
+    <item
+        android:id="@+id/btb_chart"
+        android:contentDescription="Estatística"
+        android:icon="@drawable/ic_bar_chart"
+        android:title="Estatística"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/btb_info"
+        android:contentDescription="Info"
+        android:icon="@drawable/ic_info"
+        android:title="Info"
+        app:showAsAction="always" />
+
+</menu>

@@ -3,15 +3,17 @@
     <string name="str_name">Nome</string>
     <string name="str_email">Email</string>
     <string name="str_senha">Senha</string>
+    <string name="str_telefone">Telefone</string>
     <string name="str_senha_confirmar">Confirmar senha</string>
     <string name="str_dataNasc">Data de Nascimento</string>
     <string name="pick_date">Selecione a data</string>
     <string name="str_data_nasc_picker">Selecione a data</string>
     <string name="str_btLogar">Entrar</string>
     <string name="str_btLogarGoogle">Entrar com Google</string>
-    <string name="str_btCadastrar">Cadastra-se</string>
-    <string name="str_btCadastrarGoogle">Cadastrar com Google</string>
+    <string name="str_btCadastrarSe">Cadastrar-se</string>
+    <string name="str_btCadastrar">Cadastrar</string>
     <string name="str_btEsqueceuSenha">Esqueceu senha?</string>
     <string name="str_logo_description">Logo Exmoker</string>
+    <string name="str_cad_contato_apoio">Cadastro contato de apoio</string>
     <string name="str_ou">OU</string>
 </resources>

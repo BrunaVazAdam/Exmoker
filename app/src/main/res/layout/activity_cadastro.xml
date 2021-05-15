@@ -108,49 +108,5 @@
             android:layout_height="wrap_content"
             android:text="@string/str_btCadastrar"
             app:cornerRadius="@dimen/border_radius_input" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp">
-
-            <View
-                android:id="@+id/divider2"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_weight="1"
-                android:background="@color/white"
-                android:translationY="18dp" />
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="@string/str_ou"
-                android:textColor="@color/white" />
-
-            <View
-                android:id="@+id/divider3"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_weight="1"
-                android:background="@color/white"
-                android:translationY="18dp" />
-        </LinearLayout>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/cad_bt_cadastrar_google"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/str_btCadastrarGoogle"
-            app:cornerRadius="@dimen/border_radius_input"
-            app:icon="@drawable/ic_logo_google"
-            app:iconSize="20dp"
-            app:iconTint="@null" />
-
-
     </LinearLayout>
 </ScrollView>
