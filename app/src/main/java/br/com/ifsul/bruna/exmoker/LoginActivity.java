@@ -49,6 +49,7 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
     private Button btEsqueceuSenha;
 
     private FirebaseAuth mAuth;
+    private EstadoSingleton estado;
     private GoogleSignInClient mGoogleSignInClient;
 
     private Validator validator;
@@ -81,9 +82,10 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
                 .requestProfile()
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-        //remover
+        // TODO: Gerenciar manter login google
         mGoogleSignInClient.signOut();
-        mAuth = FirebaseAuth.getInstance();
+        estado = EstadoSingleton.getInstance();
+        mAuth = estado.getAuthInstance();
         txtEmail = findViewById(R.id.login_txt_email);
         txtSenha = findViewById(R.id.login_txt_senha);
         etEmail = findViewById(R.id.login_et_email);
@@ -141,6 +143,7 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
 
     @Override
     public void onValidationSucceeded() {
+        btLogar.setEnabled(false);
         String password = etSenha.getText().toString();
         String email = etEmail.getText().toString();
         mAuth.signInWithEmailAndPassword(email, password)
@@ -148,6 +151,7 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
                     if (task.isSuccessful()) {
                         loginComSucesso();
                     } else {
+                        btLogar.setEnabled(true);
                         Toast.makeText(LoginActivity.this,
                                 "Email ou senha inválido!",
                                 Toast.LENGTH_LONG)

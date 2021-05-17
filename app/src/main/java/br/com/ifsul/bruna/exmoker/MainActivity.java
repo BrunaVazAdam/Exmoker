@@ -12,8 +12,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.firebase.auth.FirebaseAuth;
 
+import br.com.ifsul.bruna.exmoker.colecoes.Tabagista;
 import br.com.ifsul.bruna.exmoker.conquistas.ConquistasFragment;
 import br.com.ifsul.bruna.exmoker.estatisticas.EstatisticasFragment;
 import br.com.ifsul.bruna.exmoker.home.HomeFragment;
@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     private FloatingActionButton floatingActionButtonAjuda;
     private BottomNavigationView bottomNav;
+    private EstadoSingleton estado;
 
     private FragmentManager fm;
 
@@ -34,6 +35,14 @@ public class MainActivity extends AppCompatActivity {
 
         inicializaComponentes();
         abreHome();
+        estado.getTabagistaAsync(documentSnapshot -> {
+            Tabagista tabagista = documentSnapshot.toObject(Tabagista.class);
+            if (tabagista == null || tabagista.getContatoDeApoio() == null) {
+                Intent itCadastroContatoApoio = new Intent(MainActivity.this, CadastroContatoApoioActivity.class);
+                startActivity(itCadastroContatoApoio);
+            }
+
+        });
 
         bottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -51,7 +60,10 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.btb_info:
                         abreInformacoes();
                         // TODO: Remover após implementar logout
-                        FirebaseAuth.getInstance().signOut();
+                        estado.signOut();
+                        Intent itLogin = new Intent(MainActivity.this, LoginActivity.class);
+                        startActivity(itLogin);
+                        finish();
                         break;
                 }
                 return true;
@@ -66,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void inicializaComponentes() {
+        estado = EstadoSingleton.getInstance();
         fm = getSupportFragmentManager();
         floatingActionButtonAjuda = findViewById(R.id.main_float_bt_ajuda);
         bottomNav = findViewById(R.id.main_bottom_nav);

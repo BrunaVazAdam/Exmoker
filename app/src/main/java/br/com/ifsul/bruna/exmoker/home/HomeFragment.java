@@ -15,6 +15,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.mikhaellopez.circularimageview.CircularImageView;
 import com.squareup.picasso.Picasso;
 
+import br.com.ifsul.bruna.exmoker.EstadoSingleton;
 import br.com.ifsul.bruna.exmoker.R;
 
 public class HomeFragment extends Fragment {
@@ -22,6 +23,7 @@ public class HomeFragment extends Fragment {
     private TextView tvGreeting;
     private FirebaseAuth mAuth;
     private FirebaseUser user;
+    private EstadoSingleton estado;
     private View v;
 
     @Nullable
@@ -37,7 +39,8 @@ public class HomeFragment extends Fragment {
     private void inicializaComponentes() {
         profileAvatar = v.findViewById(R.id.ho_profile_avatar);
         tvGreeting = v.findViewById(R.id.ho_greeting);
-        mAuth = FirebaseAuth.getInstance();
+        estado = EstadoSingleton.getInstance();
+        mAuth = estado.getAuthInstance();
         user = mAuth.getCurrentUser();
     }
 

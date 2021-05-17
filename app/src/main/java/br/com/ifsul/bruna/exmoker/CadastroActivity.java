@@ -60,6 +60,7 @@ public class CadastroActivity extends AppCompatActivity implements Validator.Val
     private SimpleDateFormat formatadorDeData;
 
     private FirebaseAuth mAuth;
+    private EstadoSingleton estado;
     private Validator validator;
 
     @Override
@@ -83,7 +84,8 @@ public class CadastroActivity extends AppCompatActivity implements Validator.Val
 
 
     private void inicializaComponentes() {
-        mAuth = FirebaseAuth.getInstance();
+        estado = EstadoSingleton.getInstance();
+        mAuth = estado.getAuthInstance();
         dataSelecionada = Calendar.getInstance();
         formatadorDeData = new SimpleDateFormat("dd/MM/yyyy");
         txtNome = findViewById(R.id.cad_txt_nome);
@@ -104,6 +106,7 @@ public class CadastroActivity extends AppCompatActivity implements Validator.Val
 
     @Override
     public void onValidationSucceeded() {
+        btCadastrar.setEnabled(false);
         String password = etSenha.getText().toString();
         String email = etEmail.getText().toString();
         String name = etNome.getText().toString();
@@ -119,24 +122,18 @@ public class CadastroActivity extends AppCompatActivity implements Validator.Val
                                 .setDisplayName(name)
                                 .build();
                         user.updateProfile(profileChange);
+                        estado.setDataNascimento(formatadorDeData.format(dataSelecionada.getTime()));
                         Intent itLogin = new Intent(CadastroActivity.this, LoginActivity.class);
                         startActivity(itLogin);
                         finish();
                     } else {
+                        btCadastrar.setEnabled(true);
                         Toast.makeText(CadastroActivity.this,
                                 "Usuário não foi cadastrado!",
                                 Toast.LENGTH_LONG)
                                 .show();
                     }
                 });
-    }
-
-    public void limpaErros() {
-        txtNome.setError(null);
-        txtEmail.setError(null);
-        txtDataNasc.setError(null);
-        txtSenha.setError(null);
-        txtConfirmar_Senha.setError(null);
     }
 
     @Override
@@ -165,4 +162,13 @@ public class CadastroActivity extends AppCompatActivity implements Validator.Val
             }
         }
     }
+
+    public void limpaErros() {
+        txtNome.setError(null);
+        txtEmail.setError(null);
+        txtDataNasc.setError(null);
+        txtSenha.setError(null);
+        txtConfirmar_Senha.setError(null);
+    }
+
 }
