@@ -66,6 +66,11 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
             startActivity(itCadastrar);
         });
 
+        this.btEsqueceuSenha.setOnClickListener(v -> {
+            Intent itEsqueceuSenha = new Intent(LoginActivity.this, EsqueceuSenhaActivity.class);
+            startActivity(itEsqueceuSenha);
+        });
+
         this.btLogar.setOnClickListener(v -> {
             limpaErros();
             validator.validate();

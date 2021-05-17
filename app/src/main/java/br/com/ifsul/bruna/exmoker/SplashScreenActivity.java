@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class SplashScreen extends AppCompatActivity {
+public class SplashScreenActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private EstadoSingleton estado;
@@ -37,13 +37,13 @@ public class SplashScreen extends AppCompatActivity {
     }
 
     private void abreLogin() {
-        Intent itLogin = new Intent(SplashScreen.this, LoginActivity.class);
+        Intent itLogin = new Intent(SplashScreenActivity.this, LoginActivity.class);
         startActivity(itLogin);
         finish();
     }
 
     private void abreHome() {
-        Intent itHome = new Intent(SplashScreen.this, MainActivity.class);
+        Intent itHome = new Intent(SplashScreenActivity.this, MainActivity.class);
         startActivity(itHome);
         finish();
     }

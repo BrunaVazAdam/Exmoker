@@ -1,7 +1,6 @@
 package br.com.ifsul.bruna.exmoker;
 
 import android.app.DatePickerDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -123,8 +122,6 @@ public class CadastroActivity extends AppCompatActivity implements Validator.Val
                                 .build();
                         user.updateProfile(profileChange);
                         estado.setDataNascimento(formatadorDeData.format(dataSelecionada.getTime()));
-                        Intent itLogin = new Intent(CadastroActivity.this, LoginActivity.class);
-                        startActivity(itLogin);
                         finish();
                     } else {
                         btCadastrar.setEnabled(true);
