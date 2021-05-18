@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.btb_achievement:
                         abreConquistas();
+                        Intent itValorCigarro = new Intent(MainActivity.this, ValorCigarroActivity.class);
+                        startActivity(itValorCigarro);
                         break;
                     case R.id.btb_chart:
                         abreEstatisticas();

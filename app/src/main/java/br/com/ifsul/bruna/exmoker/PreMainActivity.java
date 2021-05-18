@@ -23,6 +23,8 @@ public class PreMainActivity extends AppCompatActivity {
 
             } else if (tabagista.getTestesFargestrom() == null) {
                 proximaTela = new Intent(PreMainActivity.this, TesteFargestromActivity.class);
+            } else if (tabagista.getPrecoCigarro() == null) {
+                proximaTela = new Intent(PreMainActivity.this, ValorCigarroActivity.class);
             }
             startActivity(proximaTela);
             finish();

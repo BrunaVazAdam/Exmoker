@@ -95,6 +95,15 @@ public class EstadoSingleton {
                 .set(data, SetOptions.merge());
     }
 
+    public void setValorCigarro(Double valorCigarro) {
+        if (!isLogged) return;
+        Map<String, Object> data = new HashMap<>();
+        data.put(ColecoesChave.VALORCIGARRO, valorCigarro);
+        db.collection(ColecoesChave.TABAGISTA)
+                .document(user.getUid())
+                .set(data, SetOptions.merge());
+    }
+
     public void addTesteFargestrom(TesteFargestrom testeFargestrom) {
         if (!isLogged) return;
         Map<String, Object> data = new HashMap<>();

@@ -21,6 +21,15 @@
     <string name="str_cad_contato_apoio">Cadastro contato de apoio</string>
     <string name="str_ou">OU</string>
 
+    <!--    Valor do cigarro-->
+    <string name="str_valor_maco_cigarro">Inserir o valor do maço do cigarro</string>
+    <string name="str_valor_maco_cigarro_invalido">O valor precisa ser maior que 0</string>
+    <string name="str_confirmar_valor">Confirmar valor</string>
+    <string name="str_simbolo_moeda">R$</string>
+    <string name="str_virgula_moeda">,</string>
+    <string name="str_valor_dezena">00</string>
+    <string name="str_valor_centavo">00</string>
+
     <!--    Teste Fargestrom-->
     <string name="str_teste_fargestrom">Teste de Fargeström</string>
     <string name="str_subtitulo_teste_fargestrom">Por favor responda as questões abaixo</string>
@@ -46,4 +55,5 @@
     <string name="str_fargestrom_questao6">Você fuma mesmo doente, quando precisa ficar camado a maior parte do tempo?</string>
     <string name="str_fargestrom_questao6_resposta1">Sim</string>
     <string name="str_fargestrom_questao6_resposta2">Não</string>
+
 </resources>
