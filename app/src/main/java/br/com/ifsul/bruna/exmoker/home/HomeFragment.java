@@ -1,9 +1,12 @@
 package br.com.ifsul.bruna.exmoker.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,12 +19,14 @@ import com.mikhaellopez.circularimageview.CircularImageView;
 import com.squareup.picasso.Picasso;
 
 import br.com.ifsul.bruna.exmoker.EstadoSingleton;
+import br.com.ifsul.bruna.exmoker.LoginActivity;
 import br.com.ifsul.bruna.exmoker.R;
 
 public class HomeFragment extends Fragment {
     private CircularImageView profileAvatar;
+    private Button btOptionsMenu;
     private TextView tvGreeting;
-    private FirebaseAuth mAuth;
+    private FirebaseAuth auth;
     private FirebaseUser user;
     private EstadoSingleton estado;
     private View v;
@@ -31,6 +36,22 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_home, null);
         inicializaComponentes();
+        btOptionsMenu.setOnClickListener(v -> {
+            PopupMenu popupMenu = new PopupMenu(getContext(), btOptionsMenu);
+            popupMenu.getMenuInflater().inflate(R.menu.options_menu, popupMenu.getMenu());
+            popupMenu.setOnMenuItemClickListener(menuItem -> {
+                switch (menuItem.getItemId()) {
+                    case R.id.ho_menu_option_logout:
+                        estado.signOut();
+                        Intent itLogin = new Intent(getContext(), LoginActivity.class);
+                        startActivity(itLogin);
+                        getActivity().finish();
+                        break;
+                }
+                return true;
+            });
+            popupMenu.show();
+        });
         carregaAvatar();
         carregaSaudacao();
         return v;
@@ -38,10 +59,11 @@ public class HomeFragment extends Fragment {
 
     private void inicializaComponentes() {
         profileAvatar = v.findViewById(R.id.ho_profile_avatar);
+        btOptionsMenu = v.findViewById(R.id.ho_bt_options_menu);
         tvGreeting = v.findViewById(R.id.ho_greeting);
         estado = EstadoSingleton.getInstance();
-        mAuth = estado.getAuthInstance();
-        user = mAuth.getCurrentUser();
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
     }
 
     private void carregaAvatar() {

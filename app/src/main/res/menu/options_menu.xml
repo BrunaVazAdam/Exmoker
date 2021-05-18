@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/ho_menu_option_logout"
+        android:title="@string/str_ho_menu_option_logout" />
+</menu>

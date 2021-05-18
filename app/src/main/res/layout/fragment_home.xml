@@ -8,6 +8,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="120dp"
+        android:gravity="center"
         android:orientation="horizontal"
         android:padding="20dp">
 
@@ -33,6 +34,12 @@
             android:layout_weight="1"
             android:padding="10dp"
             android:text="Olá..." />
+
+        <Button
+            android:id="@+id/ho_bt_options_menu"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/ic_options_menu" />
     </LinearLayout>
 
     <androidx.core.widget.NestedScrollView
@@ -94,7 +101,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="R$ 120,00"
-                            android:textSize="40sp" />
+                            android:textSize="28sp" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -145,7 +152,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="180 cigarros"
-                            android:textSize="30sp" />
+                            android:textSize="28sp" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -188,7 +195,7 @@
                             style="@style/Title"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Localizar Unidades Básicas de Saúde mais próximas" />
+                            android:text="Localizar Unidades Básicas de Saúde" />
 
                     </LinearLayout>
 

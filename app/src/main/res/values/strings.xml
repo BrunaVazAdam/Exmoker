@@ -20,6 +20,7 @@
     <string name="str_logo_description">Logo Exmoker</string>
     <string name="str_cad_contato_apoio">Cadastro contato de apoio</string>
     <string name="str_ou">OU</string>
+    <string name="str_ho_menu_option_logout">Sair</string>
 
     <!--    Valor do cigarro-->
     <string name="str_valor_maco_cigarro">Inserir o valor do maço do cigarro</string>
