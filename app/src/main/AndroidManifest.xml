@@ -11,11 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Exmoker">
-        <activity android:name=".EsqueceuSenhaActivity"></activity>
+        <activity android:name=".PreMainActivity"></activity>
+        <activity android:name=".TesteFargestromActivity" />
+        <activity android:name=".EsqueceuSenhaActivity" />
         <activity
             android:name=".SplashScreenActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.Exmoker.Fullscreen">
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

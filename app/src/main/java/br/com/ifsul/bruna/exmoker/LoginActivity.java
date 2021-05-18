@@ -166,8 +166,9 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
     }
 
     private void loginComSucesso() {
-        Intent itLogin = new Intent(LoginActivity.this, MainActivity.class);
+        Intent itLogin = new Intent(LoginActivity.this, PreMainActivity.class);
         startActivity(itLogin);
+        finish();
     }
 
     public void limpaErros() {

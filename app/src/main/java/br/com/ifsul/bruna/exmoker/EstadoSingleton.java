@@ -4,6 +4,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.SetOptions;
 
@@ -13,6 +14,7 @@ import java.util.Map;
 import br.com.ifsul.bruna.exmoker.colecoes.ColecoesChave;
 import br.com.ifsul.bruna.exmoker.colecoes.ContatoDeApoio;
 import br.com.ifsul.bruna.exmoker.colecoes.Tabagista;
+import br.com.ifsul.bruna.exmoker.colecoes.TesteFargestrom;
 import br.com.ifsul.bruna.exmoker.colecoes.Usuario;
 
 public class EstadoSingleton {
@@ -87,9 +89,18 @@ public class EstadoSingleton {
     public void setContatoDeApoio(ContatoDeApoio contatoDeApoio) {
         if (!isLogged) return;
         Map<String, Object> data = new HashMap<>();
-        data.put("contatoDeApoio", contatoDeApoio);
+        data.put(ColecoesChave.CONTATODEAPOIO, contatoDeApoio);
         db.collection(ColecoesChave.TABAGISTA)
                 .document(user.getUid())
                 .set(data, SetOptions.merge());
+    }
+
+    public void addTesteFargestrom(TesteFargestrom testeFargestrom) {
+        if (!isLogged) return;
+        Map<String, Object> data = new HashMap<>();
+        data.put(ColecoesChave.TESTESFARGESTROM, testeFargestrom);
+        db.collection(ColecoesChave.TABAGISTA)
+                .document(user.getUid())
+                .update(ColecoesChave.TESTESFARGESTROM, FieldValue.arrayUnion(testeFargestrom));
     }
 }

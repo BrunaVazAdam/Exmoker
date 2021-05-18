@@ -13,7 +13,6 @@ import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import br.com.ifsul.bruna.exmoker.colecoes.Tabagista;
 import br.com.ifsul.bruna.exmoker.conquistas.ConquistasFragment;
 import br.com.ifsul.bruna.exmoker.estatisticas.EstatisticasFragment;
 import br.com.ifsul.bruna.exmoker.home.HomeFragment;
@@ -32,17 +31,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         inicializaComponentes();
         abreHome();
-        estado.getTabagistaAsync(documentSnapshot -> {
-            Tabagista tabagista = documentSnapshot.toObject(Tabagista.class);
-            if (tabagista == null || tabagista.getContatoDeApoio() == null) {
-                Intent itCadastroContatoApoio = new Intent(MainActivity.this, CadastroContatoApoioActivity.class);
-                startActivity(itCadastroContatoApoio);
-            }
 
-        });
 
         bottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -56,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.btb_chart:
                         abreEstatisticas();
+                        Intent itTesteFargestrom = new Intent(MainActivity.this, TesteFargestromActivity.class);
+                        startActivity(itTesteFargestrom);
                         break;
                     case R.id.btb_info:
                         abreInformacoes();

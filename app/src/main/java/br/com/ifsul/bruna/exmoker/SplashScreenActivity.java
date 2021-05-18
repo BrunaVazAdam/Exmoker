@@ -28,7 +28,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                 if (user == null) {
                     abreLogin();
                 } else {
-                    abreHome();
+                    abrePreMain();
                 }
             }
         }, 2000);
@@ -42,9 +42,9 @@ public class SplashScreenActivity extends AppCompatActivity {
         finish();
     }
 
-    private void abreHome() {
-        Intent itHome = new Intent(SplashScreenActivity.this, MainActivity.class);
-        startActivity(itHome);
+    private void abrePreMain() {
+        Intent itPreMain = new Intent(SplashScreenActivity.this, PreMainActivity.class);
+        startActivity(itPreMain);
         finish();
     }
 
