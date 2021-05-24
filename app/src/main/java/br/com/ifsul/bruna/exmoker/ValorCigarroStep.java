@@ -1,17 +1,19 @@
 package br.com.ifsul.bruna.exmoker;
 
-import android.content.Intent;
-import android.os.Bundle;
 import android.os.Handler;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
+import java.text.NumberFormat;
 
-public class ValorCigarroActivity extends AppCompatActivity {
+import ernestoyaquello.com.verticalstepperform.Step;
+
+public class ValorCigarroStep extends Step<Double> {
 
     private static int DELAY = 50;
+    NumberFormat valorFormatter;
     private Handler handler;
     private Runnable runnable;
     private TextView tvValorDezena;
@@ -22,77 +24,67 @@ public class ValorCigarroActivity extends AppCompatActivity {
     private Button btIncrementaCentavo;
     private Button btDecrementaCentavo;
 
-    private Button btConfirmaValor;
-
     private Integer valorDezena;
     private Integer valorCentavo;
     private Double valorMacoCigarro;
 
-    private EstadoSingleton estado;
+    private View vwValorCigarro;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_valor_cigarro);
-        inicializaComponentes();
-        configuraListenersDeValores();
-        btConfirmaValor.setOnClickListener(v -> {
-            calculaValorMacoCigarro();
-            if (valorMacoCigarro == 0) {
-                Toast.makeText(ValorCigarroActivity.this,
-                        getString(R.string.str_valor_maco_cigarro_invalido),
-                        Toast.LENGTH_LONG)
-                        .show();
-                return;
-            }
-            estado.setValorCigarro(valorMacoCigarro);
-            Intent itPreMain = new Intent(ValorCigarroActivity.this, PreMainActivity.class);
-            startActivity(itPreMain);
-            finish();
-        });
-
-
+    protected ValorCigarroStep(String title) {
+        super(title);
     }
 
     private void inicializaComponentes() {
-        estado = EstadoSingleton.getInstance();
+        valorFormatter = NumberFormat.getCurrencyInstance();
         handler = new Handler();
         valorDezena = 0;
         valorCentavo = 0;
-        tvValorDezena = findViewById(R.id.vc_tv_valor_dezena);
-        tvValorCentavo = findViewById(R.id.vc_tv_valor_centavo);
-        btIncrementaDezena = findViewById(R.id.vc_bt_incrementa_valor_dezena);
-        btDecrementaDezena = findViewById(R.id.vc_bt_decrementa_valor_dezena);
-        btIncrementaCentavo = findViewById(R.id.vc_bt_incrementa_valor_centavo);
-        btDecrementaCentavo = findViewById(R.id.vc_bt_decrementa_valor_centavo);
-        btConfirmaValor = findViewById(R.id.vc_bt_confirmar_valor);
+        valorMacoCigarro = 0.0;
+        tvValorDezena = vwValorCigarro.findViewById(R.id.vl_tv_valor_dezena);
+        tvValorCentavo = vwValorCigarro.findViewById(R.id.vl_tv_valor_centavo);
+        btIncrementaDezena = vwValorCigarro.findViewById(R.id.ma_bt_incrementa_mes);
+        btDecrementaDezena = vwValorCigarro.findViewById(R.id.vl_bt_decrementa_valor_dezena);
+        btIncrementaCentavo = vwValorCigarro.findViewById(R.id.vl_bt_incrementa_valor_centavo);
+        btDecrementaCentavo = vwValorCigarro.findViewById(R.id.vl_bt_decrementa_valor_centavo);
     }
 
     private void calculaValorMacoCigarro() {
         valorMacoCigarro = valorDezena + (double) valorCentavo / 100;
     }
 
+    private void atualizaComOValor(Double valor) {
+        valorDezena = valor.intValue();
+        valorCentavo = (int) ((valor - valor.intValue()) * 10);
+        valorMacoCigarro = valor;
+        tvValorDezena.setText(String.format("%02d", valorDezena));
+        tvValorCentavo.setText(String.format("%02d", valorCentavo));
+    }
+
     private void incrementaDezena() {
         valorDezena++;
         if (valorDezena == 100) valorDezena = 0;
+        markAsCompletedOrUncompleted(true);
         tvValorDezena.setText(String.format("%02d", valorDezena));
     }
 
     private void decrementaDezena() {
         valorDezena--;
         if (valorDezena == -1) valorDezena = 99;
+        markAsCompletedOrUncompleted(true);
         tvValorDezena.setText(String.format("%02d", valorDezena));
     }
 
     private void incrementaCentavo() {
         valorCentavo++;
         if (valorCentavo == 100) valorCentavo = 0;
+        markAsCompletedOrUncompleted(true);
         tvValorCentavo.setText(String.format("%02d", valorCentavo));
     }
 
     private void decrementaCentavo() {
         valorCentavo--;
         if (valorCentavo == -1) valorCentavo = 99;
+        markAsCompletedOrUncompleted(true);
         tvValorCentavo.setText(String.format("%02d", valorCentavo));
     }
 
@@ -146,5 +138,62 @@ public class ValorCigarroActivity extends AppCompatActivity {
             handler.postDelayed(runnable, DELAY);
             return true;
         });
+    }
+
+    @Override
+    public Double getStepData() {
+        calculaValorMacoCigarro();
+        return valorMacoCigarro;
+    }
+
+    @Override
+    public String getStepDataAsHumanReadableString() {
+        return valorFormatter.format(getStepData());
+    }
+
+    @Override
+    public void restoreStepData(Double data) {
+        atualizaComOValor(data);
+    }
+
+    @Override
+    protected IsDataValid isStepDataValid(Double stepData) {
+        if (stepData == 0.0) {
+            return new IsDataValid(false,
+                    vwValorCigarro
+                            .getResources()
+                            .getString(R.string.str_valor_maco_cigarro_invalido)
+            );
+        }
+        return new IsDataValid(true);
+    }
+
+    @Override
+    protected View createStepContentLayout() {
+        LayoutInflater inflater = LayoutInflater.from(getContext());
+        vwValorCigarro = inflater.inflate(R.layout.valor_layout, null, false);
+        inicializaComponentes();
+        configuraListenersDeValores();
+        return vwValorCigarro;
+    }
+
+    @Override
+    protected void onStepOpened(boolean animated) {
+
+    }
+
+    @Override
+    protected void onStepClosed(boolean animated) {
+
+    }
+
+    @Override
+    protected void onStepMarkedAsCompleted(boolean animated) {
+
+    }
+
+    @Override
+    protected void onStepMarkedAsUncompleted(boolean animated) {
+
     }
 }

@@ -31,16 +31,34 @@
         <item name="fontFamily">@font/roboto_bold</item>
     </style>
 
-    <style name="Subtitle">
-        <item name="android:textColor">@color/white</item>
+    <style name="Subtitle" parent="Title">
         <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="TextTitle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20sp</item>
+        <item name="fontFamily">@font/roboto_regular</item>
+    </style>
+
+    <style name="Text" parent="TextTitle">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextBold" parent="Text">
         <item name="fontFamily">@font/roboto_bold</item>
     </style>
 
-    <style name="ValorCigarroText">
-        <item name="android:textColor">@color/white</item>
+    <style name="ValorCigarroText" parent="Title">
         <item name="android:textSize">56sp</item>
-        <item name="fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="EconomiaText" parent="Title">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="ValorEconomiaText" parent="Title">
+        <item name="android:textSize">40sp</item>
     </style>
 
     <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">

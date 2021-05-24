@@ -9,5 +9,13 @@
     <color name="white">#FFFFFFFF</color>
     <color name="exmoker">#70C0A5</color>
     <color name="exmoker_darker">#59B294</color>
+
+    <color name="dependencia_muito_baixa">@color/exmoker</color>
+    <color name="dependencia_baixa">@color/teal_700</color>
+    <color name="dependencia_media">#CD9E0E</color>
+    <color name="dependencia_elevada">#EB5757</color>
+    <color name="dependencia_muito_elevada">@color/black</color>
+
+
     <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">@color/white</color>
 </resources>

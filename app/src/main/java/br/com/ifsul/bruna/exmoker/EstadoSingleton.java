@@ -13,6 +13,7 @@ import java.util.Map;
 
 import br.com.ifsul.bruna.exmoker.colecoes.ColecoesChave;
 import br.com.ifsul.bruna.exmoker.colecoes.ContatoDeApoio;
+import br.com.ifsul.bruna.exmoker.colecoes.InformacoesAdicionais;
 import br.com.ifsul.bruna.exmoker.colecoes.Tabagista;
 import br.com.ifsul.bruna.exmoker.colecoes.TesteFargestrom;
 import br.com.ifsul.bruna.exmoker.colecoes.Usuario;
@@ -95,13 +96,13 @@ public class EstadoSingleton {
                 .set(data, SetOptions.merge());
     }
 
-    public void setValorCigarro(Double valorCigarro) {
+    public void setQtdCigarrosDia(Integer qtdCigarrosDia) {
         if (!isLogged) return;
-        Map<String, Object> data = new HashMap<>();
-        data.put(ColecoesChave.VALORCIGARRO, valorCigarro);
         db.collection(ColecoesChave.TABAGISTA)
                 .document(user.getUid())
-                .set(data, SetOptions.merge());
+                .update(ColecoesChave.INFORMACOESADICIONAIS
+                                + "." + ColecoesChave.QTDCIGARROSDIA,
+                        qtdCigarrosDia);
     }
 
     public void addTesteFargestrom(TesteFargestrom testeFargestrom) {
@@ -111,5 +112,21 @@ public class EstadoSingleton {
         db.collection(ColecoesChave.TABAGISTA)
                 .document(user.getUid())
                 .update(ColecoesChave.TESTESFARGESTROM, FieldValue.arrayUnion(testeFargestrom));
+    }
+
+    public void setInformacoesAdicionais(InformacoesAdicionais informacoesAdicionais) {
+        if (!isLogged) return;
+        Map<String, Object> data = new HashMap<>();
+        data.put(ColecoesChave.INFORMACOESADICIONAIS, informacoesAdicionais);
+        db.collection(ColecoesChave.TABAGISTA)
+                .document(user.getUid())
+                .update(
+                        ColecoesChave.INFORMACOESADICIONAIS + "." + ColecoesChave.PRECOCIGARRO,
+                        informacoesAdicionais.getPrecoCigarro(),
+                        ColecoesChave.INFORMACOESADICIONAIS + "." + ColecoesChave.QTDCIGARRONOMACO,
+                        informacoesAdicionais.getQtdCigarroNoMaco(),
+                        ColecoesChave.INFORMACOESADICIONAIS + "." + ColecoesChave.DATAINICIOTABAGISMO,
+                        informacoesAdicionais.getDataInicioTabagismo()
+                );
     }
 }

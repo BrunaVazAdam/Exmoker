@@ -3,8 +3,8 @@ package br.com.ifsul.bruna.exmoker.colecoes;
 import java.util.List;
 
 public class Tabagista {
-    private Double precoCigarro;
     private ContatoDeApoio contatoDeApoio;
+    private InformacoesAdicionais informacoesAdicionais;
     private List<TesteFargestrom> testesFargestrom;
 
     public Tabagista() {
@@ -31,8 +31,8 @@ public class Tabagista {
         return testesFargestrom;
     }
 
-    public Double getPrecoCigarro() {
-        return precoCigarro;
+    public InformacoesAdicionais getInformacoesAdicionais() {
+        return informacoesAdicionais;
     }
 
     @Override

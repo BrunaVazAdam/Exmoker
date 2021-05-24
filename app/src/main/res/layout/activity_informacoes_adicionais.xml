@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    tools:context=".TesteFargestromActivity">
+    tools:context=".InformacoesAdicionaisActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,14 +21,7 @@
                 style="@style/Title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/str_teste_fargestrom" />
-
-            <TextView
-                style="@style/Subtitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="3dp"
-                android:text="@string/str_subtitulo_teste_fargestrom" />
+                android:text="@string/str_informacoes_adicionais" />
 
         </LinearLayout>
 
@@ -38,17 +31,18 @@
             android:layout_height="2dp"
             android:background="@color/white" />
 
-        <ernestoyaquello.com.verticalstepperform.VerticalStepperFormView xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/stepper_form_teste_fargestrom"
+        <ernestoyaquello.com.verticalstepperform.VerticalStepperFormView
+            android:id="@+id/stepper_form_informacoes_adicionais"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:form_circle_background_color="@color/white"
             app:form_circle_completed_background_color="@color/white"
+            app:form_circle_error_background_color="@color/white"
             app:form_circle_text_color="@color/exmoker_darker"
             app:form_next_button_background_color="@color/exmoker_darker"
             app:form_next_button_pressed_background_color="@color/exmoker_darker"
             app:form_subtitle_text_color="@color/white"
             app:form_title_text_color="@color/white" />
+
     </LinearLayout>
 </ScrollView>

@@ -20,7 +20,27 @@
     <string name="str_logo_description">Logo Exmoker</string>
     <string name="str_cad_contato_apoio">Cadastro contato de apoio</string>
     <string name="str_ou">OU</string>
+    <string name="str_confirmar">Confirmar</string>
+    <string name="str_cancelar">Cancelar</string>
     <string name="str_ho_menu_option_logout">Sair</string>
+
+    <!--    Informacoes adicionais-->
+    <string name="str_informacoes_adicionais">Informações adicionais</string>
+    <string name="str_qtd_cigarros_no_maco">Quantos cigarros possui o maço?</string>
+    <string name="str_cigarros_no_maco">cigarros no maço</string>
+    <string name="str_barra">/</string>
+    <string name="str_qtd_cigarros_no_maco_invalido">A quantidade precisa ser maior que 0</string>
+    <string name="str_mes">Mês</string>
+    <string name="str_ano">Ano</string>
+    <string name="str_data_inicio_tabagismo">Quando começou a fumar?</string>
+    <string name="str_data_invalida">A data precisa estar no passado</string>
+
+    <!--    Resultado Infomacoes-->
+    <string name="str_resultado_informacoes">Benefícios financeiros ao parar de fumar</string>
+    <string name="str_dinheiro_gasto_total">Estimativa de gastos com o cigarro até o momento:</string>
+    <string name="str_dinheiro_gasto_diario">Economia diária:</string>
+    <string name="str_dinheiro_gasto_mensal">Economia mensal:</string>
+    <string name="str_dinheiro_gasto_anual">Economia anual:</string>
 
     <!--    Valor do cigarro-->
     <string name="str_valor_maco_cigarro">Inserir o valor do maço do cigarro</string>
@@ -33,6 +53,10 @@
 
     <!--    Teste Fargestrom-->
     <string name="str_teste_fargestrom">Teste de Fargeström</string>
+    <string name="str_cigarros_por_dia">cigarros por dia</string>
+    <string name="str_proxima_questao">Próxima</string>
+    <string name="str_quantidade_cigarros">00</string>
+    <string name="str_ver_resultado_teste">Ver resultado</string>
     <string name="str_subtitulo_teste_fargestrom">Por favor responda as questões abaixo</string>
     <string name="str_fargestrom_questao1">Quanto tempo após acordar você fuma seu primeiro cigarro?</string>
     <string name="str_fargestrom_questao1_resposta1">Nos primeiros 5 minutos</string>
@@ -56,5 +80,37 @@
     <string name="str_fargestrom_questao6">Você fuma mesmo doente, quando precisa ficar camado a maior parte do tempo?</string>
     <string name="str_fargestrom_questao6_resposta1">Sim</string>
     <string name="str_fargestrom_questao6_resposta2">Não</string>
+
+    <!--Resultado do Teste Fargeström -->
+
+    <string name="str_resultado_fargestrom">Nível de dependência à nicotina</string>
+    <string name="str_resultado_avancar">Avançar</string>
+    <string name="str_nivel_dependencia_muito_baixa">DEPENDÊNCIA MUITO BAIXA</string>
+    <string name="str_nivel_dependencia_baixa">DEPENDÊNCIA BAIXA</string>
+    <string name="str_nivel_dependencia_media">DEPENDÊNCIA MÉDIA</string>
+    <string name="str_nivel_dependencia_elevada">DEPENDÊNCIA ELEVADA</string>
+    <string name="str_nivel_dependencia_muito_elevada">DEPENDÊNCIA MUITO ELEVADA</string>
+    <string name="str_subtitle_baixa_dependencia">\nVocê apresentará sintomas da abstinência mais leves ao cessar  com o uso do cigarro.</string>
+    <string name="str_subtitle_media_dependencia">\nVocê apresentará sintomas da abstinência moderados ao cessar com o uso do cigarro.</string>
+    <string name="str_subtitle_alta_dependencia">\nVocê apresentará sintomas da abstinência mais intensos ao cessar com o uso do cigarro.</string>
+
+    <string name="str_doencas_content">
+\n
+● Câncer de pulmão\n
+● Câncer de laringe\n
+● Câncer de faringe\n
+● Leucemia\n
+● Infarto\n
+● Aneurisma\n
+● Impotência sexual no homem\n
+● Infertilidade na mulher\n
+● Entre outras doenças
+    </string>
+
+
+    <!-- DOENÇA TABACO RELACIONADAS-->
+    <string name="str_recomendacao">Recomenda-se a busca por ajuda médica.</string>
+
+    <string name="str_doencas_title">DOENÇAS RELACIONADAS AO TABAGISMO</string>
 
 </resources>

@@ -16,7 +16,7 @@ public class TesteFargestromActivity extends AppCompatActivity implements Steppe
     private QuestaoFargestromStep primeiraQuestaoFargestromStep;
     private QuestaoFargestromStep segundaQuestaoFargestromStep;
     private QuestaoFargestromStep terceiraQuestaoFargestromStep;
-    private QuestaoFargestromStep quartaQuestaoFargestromStep;
+    private QuantidadeStep quartaQuestaoFargestromStep;
     private QuestaoFargestromStep quintaQuestaoFargestromStep;
     private QuestaoFargestromStep sextaQuestaoFargestromStep;
 
@@ -29,7 +29,7 @@ public class TesteFargestromActivity extends AppCompatActivity implements Steppe
         setContentView(R.layout.activity_teste_fargestrom);
         estado = EstadoSingleton.getInstance();
         inicializaQuestoes();
-        verticalStepperForm = findViewById(R.id.stepper_form);
+        verticalStepperForm = findViewById(R.id.stepper_form_teste_fargestrom);
         verticalStepperForm
                 .setup(this,
                         primeiraQuestaoFargestromStep,
@@ -39,9 +39,9 @@ public class TesteFargestromActivity extends AppCompatActivity implements Steppe
                         quintaQuestaoFargestromStep,
                         sextaQuestaoFargestromStep)
                 .displayBottomNavigation(false)
-                .stepNextButtonText("Próxima")
+                .stepNextButtonText(getString(R.string.str_proxima_questao))
                 .includeConfirmationStep(false)
-                .lastStepNextButtonText("Finalizar")
+                .lastStepNextButtonText(getString(R.string.str_ver_resultado_teste))
                 .init();
     }
 
@@ -67,13 +67,7 @@ public class TesteFargestromActivity extends AppCompatActivity implements Steppe
                                 new OpcaoQuestao(getString(R.string.str_fargestrom_questao3_resposta2), 0)
                         ));
         quartaQuestaoFargestromStep =
-                new QuestaoFargestromStep(getString(R.string.str_fargestrom_questao4),
-                        Arrays.asList(
-                                new OpcaoQuestao(getString(R.string.str_fargestrom_questao4_resposta1), 0),
-                                new OpcaoQuestao(getString(R.string.str_fargestrom_questao4_resposta2), 1),
-                                new OpcaoQuestao(getString(R.string.str_fargestrom_questao4_resposta3), 2),
-                                new OpcaoQuestao(getString(R.string.str_fargestrom_questao4_resposta4), 3)
-                        ));
+                new QuantidadeStep(getString(R.string.str_fargestrom_questao4), getString(R.string.str_cigarros_por_dia));
         quintaQuestaoFargestromStep =
                 new QuestaoFargestromStep(getString(R.string.str_fargestrom_questao5),
                         Arrays.asList(
@@ -94,14 +88,16 @@ public class TesteFargestromActivity extends AppCompatActivity implements Steppe
                 primeiraQuestaoFargestromStep.getStepData(),
                 segundaQuestaoFargestromStep.getStepData(),
                 terceiraQuestaoFargestromStep.getStepData(),
-                quartaQuestaoFargestromStep.getStepData(),
+                quartaQuestaoFargestromStep.getValorQuestao(),
                 quintaQuestaoFargestromStep.getStepData(),
                 sextaQuestaoFargestromStep.getStepData()
         );
 
         estado.addTesteFargestrom(testeFargestrom);
-        Intent itPreMain = new Intent(TesteFargestromActivity.this, PreMainActivity.class);
-        startActivity(itPreMain);
+        estado.setQtdCigarrosDia(quartaQuestaoFargestromStep.getStepData());
+        Intent itResultadoFargestrom = new Intent(TesteFargestromActivity.this, ResultadoFargestromActivity.class);
+        itResultadoFargestrom.putExtra("resultado", testeFargestrom.getResultado());
+        startActivity(itResultadoFargestrom);
         finish();
     }
 

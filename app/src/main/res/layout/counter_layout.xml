@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/ct_bt_decrementa"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/ic_triangle_up"
+        android:rotation="-90" />
+
+    <TextView
+        android:id="@+id/ct_tv_quantidade"
+        style="@style/ValorCigarroText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_quantidade_cigarros" />
+
+    <Button
+        android:id="@+id/ct_bt_incrementa"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/ic_triangle_up"
+        android:rotation="90" />
+</LinearLayout>
