@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".MetodoParadaActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="25dp">
+
+            <TextView
+                style="@style/Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/str_escolher_metodo" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/cad_ca_divider"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:id="@+id/mp_ll_imediata"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/card_shape"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/mp_rb_imediata"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/white"
+                        android:checked="true"
+                        android:clickable="false"
+                        android:minWidth="40dp"
+                        android:minHeight="30dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="30sp" />
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/str_parada_imediata" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_parada_imediata_descricao" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mp_ll_gradual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/card_shape"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/mp_rb_gradual"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/white"
+                        android:clickable="false"
+                        android:minWidth="40dp"
+                        android:minHeight="30dp"
+                        android:scaleX="1.3"
+                        android:scaleY="1.3"
+                        android:textSize="30sp" />
+
+                    <TextView
+                        style="@style/TextTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/str_parada_gradual" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/mp_tv_gradual"
+                    style="@style/Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_parada_gradual_descricao" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mp_bt_confirmar"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="@string/str_confirmar"
+                app:cornerRadius="@dimen/border_radius_input" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

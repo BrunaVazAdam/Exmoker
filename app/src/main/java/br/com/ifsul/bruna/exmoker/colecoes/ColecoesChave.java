@@ -10,4 +10,6 @@ public class ColecoesChave {
     public static final String PRECOCIGARRO = "precoCigarro";
     public static final String QTDCIGARRONOMACO = "qtdCigarroNoMaco";
     public static final String DATAINICIOTABAGISMO = "dataInicioTabagismo";
+    public static final String PARADAGRADUAL = "paradaGradual";
+    public static final String DATAPARADAGRADUAL = "dataParadaGradual";
 }

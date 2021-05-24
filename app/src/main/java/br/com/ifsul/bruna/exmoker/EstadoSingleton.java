@@ -8,6 +8,7 @@ import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.SetOptions;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -91,6 +92,16 @@ public class EstadoSingleton {
         if (!isLogged) return;
         Map<String, Object> data = new HashMap<>();
         data.put(ColecoesChave.CONTATODEAPOIO, contatoDeApoio);
+        db.collection(ColecoesChave.TABAGISTA)
+                .document(user.getUid())
+                .set(data, SetOptions.merge());
+    }
+
+    public void setMetodoParada(Boolean paradaGradual, Date dataParadaGradual) {
+        if (!isLogged) return;
+        Map<String, Object> data = new HashMap<>();
+        data.put(ColecoesChave.PARADAGRADUAL, paradaGradual);
+        data.put(ColecoesChave.DATAPARADAGRADUAL, dataParadaGradual);
         db.collection(ColecoesChave.TABAGISTA)
                 .document(user.getUid())
                 .set(data, SetOptions.merge());

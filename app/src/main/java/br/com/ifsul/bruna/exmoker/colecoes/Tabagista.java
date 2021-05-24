@@ -1,8 +1,11 @@
 package br.com.ifsul.bruna.exmoker.colecoes;
 
+import java.util.Date;
 import java.util.List;
 
 public class Tabagista {
+    private Boolean paradaGradual;
+    private Date dataParadaGradual;
     private ContatoDeApoio contatoDeApoio;
     private InformacoesAdicionais informacoesAdicionais;
     private List<TesteFargestrom> testesFargestrom;
@@ -33,6 +36,22 @@ public class Tabagista {
 
     public InformacoesAdicionais getInformacoesAdicionais() {
         return informacoesAdicionais;
+    }
+
+    public Boolean getParadaGradual() {
+        return paradaGradual;
+    }
+
+    public void setParadaGradual(Boolean paradaGradual) {
+        this.paradaGradual = paradaGradual;
+    }
+
+    public Date getDataParadaGradual() {
+        return dataParadaGradual;
+    }
+
+    public void setDataParadaGradual(Date dataParadaGradual) {
+        this.dataParadaGradual = dataParadaGradual;
     }
 
     @Override

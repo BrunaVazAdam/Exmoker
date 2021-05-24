@@ -24,6 +24,14 @@
     <string name="str_cancelar">Cancelar</string>
     <string name="str_ho_menu_option_logout">Sair</string>
 
+    <!--    Metodo Parada-->
+    <string name="str_escolher_metodo">Escolher método de parada</string>
+    <string name="str_parada_imediata">Parada Imediata</string>
+    <string name="str_parada_imediata_descricao">Pare imediatamente com o uso do cigarro e mantenha-se longe dos malefícios causados pelo tabagismo.</string>
+    <string name="str_parada_gradual">Parada Gradual</string>
+    <string name="str_parada_gradual_descricao">Diminua sua quantidade de cigarros consumidos diariamente até atingir a meta de zero cigarros</string>
+    <string name="str_parada_gradual_descricao_em">em</string>
+
     <!--    Informacoes adicionais-->
     <string name="str_informacoes_adicionais">Informações adicionais</string>
     <string name="str_qtd_cigarros_no_maco">Quantos cigarros possui o maço?</string>
