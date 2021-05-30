@@ -1,4 +1,4 @@
-package br.com.ifsul.bruna.exmoker;
+package br.com.ifsul.bruna.exmoker.steps;
 
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -10,6 +10,7 @@ import android.widget.RadioGroup;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.ifsul.bruna.exmoker.OpcaoQuestao;
 import ernestoyaquello.com.verticalstepperform.Step;
 
 public class QuestaoFargestromStep extends Step<Integer> {
@@ -17,7 +18,7 @@ public class QuestaoFargestromStep extends Step<Integer> {
     private List<RadioButton> radioButtons;
     private List<OpcaoQuestao> opcoes;
 
-    protected QuestaoFargestromStep(String title, List<OpcaoQuestao> opcoes) {
+    public QuestaoFargestromStep(String title, List<OpcaoQuestao> opcoes) {
         super(title);
         this.opcoes = opcoes;
         this.radioButtons = new ArrayList<>();

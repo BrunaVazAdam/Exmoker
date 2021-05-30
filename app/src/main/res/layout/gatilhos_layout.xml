@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.chip.ChipGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/gs_cg_gatilhos"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:selectionRequired="true">
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/gs_cp_nervosismo"
+        style="@style/ChipChoiceCustom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_nervosismo" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/gs_cp_convivio_fumantes"
+        style="@style/ChipChoiceCustom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_convivio_fumantes" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/gs_cp_aumento_alimentacao"
+        style="@style/ChipChoiceCustom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_aumento_alimentacao" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/gs_cp_sintomas_abstinencia"
+        style="@style/ChipChoiceCustom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_sintomas_abstinencia" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/gs_cp_outro"
+        style="@style/ChipChoiceCustom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_outro" />
+
+</com.google.android.material.chip.ChipGroup>

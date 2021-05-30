@@ -1,4 +1,4 @@
-package br.com.ifsul.bruna.exmoker;
+package br.com.ifsul.bruna.exmoker.steps;
 
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import java.text.NumberFormat;
 
+import br.com.ifsul.bruna.exmoker.R;
 import ernestoyaquello.com.verticalstepperform.Step;
 
 public class ValorCigarroStep extends Step<Double> {
@@ -30,7 +31,7 @@ public class ValorCigarroStep extends Step<Double> {
 
     private View vwValorCigarro;
 
-    protected ValorCigarroStep(String title) {
+    public ValorCigarroStep(String title) {
         super(title);
     }
 

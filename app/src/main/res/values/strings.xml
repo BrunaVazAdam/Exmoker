@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">Exmoker</string>
+    <string name="str_sim">Sim</string>
+    <string name="str_nao">Não</string>
+    <string name="str_cigarro">cigarro</string>
+    <string name="str_cigarros">cigarros</string>
+    <string name="str_finalizar">Finalizar</string>
     <string name="str_name">Nome</string>
     <string name="str_email">Email</string>
     <string name="str_senha">Senha</string>
@@ -24,6 +29,22 @@
     <string name="str_cancelar">Cancelar</string>
     <string name="str_ho_menu_option_logout">Sair</string>
 
+    <!-- Estatistica -->
+    <string name="str_estatisticas">Estatísticas</string>
+
+    <!-- Menu -->
+    <string name="str_menu_home">Home</string>
+    <string name="str_menu_conquistas">Conquistas</string>
+    <string name="str_menu_estatistica">Estatística</string>
+    <string name="str_menu_info">Info</string>
+
+    <!-- Conquistas -->
+    <string name="str_conquistas">Conquistas</string>
+    <string name="str_torne_se_exmoker">Tornou-se um Exmoker</string>
+    <string name="str_torne_se_exmoker_descricao">Parabéns pela iniciativa de tornar-se um Exmoker.</string>
+    <string name="str_sete_dia_sem_cigarro">Sete dias sem fumar!</string>
+    <string name="str_sete_dia_sem_cigarro_descricao">Fique sete dias consecutivos sem fumar.</string>
+
     <!--    Metodo Parada-->
     <string name="str_escolher_metodo">Escolher método de parada</string>
     <string name="str_parada_imediata">Parada Imediata</string>
@@ -47,8 +68,34 @@
     <string name="str_resultado_informacoes">Benefícios financeiros ao parar de fumar</string>
     <string name="str_dinheiro_gasto_total">Estimativa de gastos com o cigarro até o momento:</string>
     <string name="str_dinheiro_gasto_diario">Economia diária:</string>
+    <string name="str_dinheiro_gasto_semanal">Economia semanal:</string>
     <string name="str_dinheiro_gasto_mensal">Economia mensal:</string>
     <string name="str_dinheiro_gasto_anual">Economia anual:</string>
+
+    <!--    Intensidade-->
+    <string name="str_pergunta_intensidade">Quão intensa é a sua vontade de fumar?</string>
+    <string name="str_muito_baixa">Muito baixa</string>
+    <string name="str_baixa">Baixa</string>
+    <string name="str_media">Media</string>
+    <string name="str_alta">Alta</string>
+    <string name="str_muito_alta">Muito alta</string>
+
+    <!--    Gatilhos-->
+    <string name="str_gatilhos_questao">Selecione um ou mais gatilhos</string>
+    <string name="str_nervosismo">Nervosismo</string>
+    <string name="str_convivio_fumantes">Convívio com fumantes</string>
+    <string name="str_aumento_alimentacao">Aumento do consumo alimentar</string>
+    <string name="str_sintomas_abstinencia">Sintomas da abstinência</string>
+    <string name="str_gatilhos_maior_zero">Precisa selecionar algum gatilho</string>
+
+    <!--   Local Gatilhos-->
+    <string name="str_local_gatilho">Qual o local que ocorreu a vontade de fumar?</string>
+    <string name="str_escola">Escola</string>
+    <string name="str_trabalho">Trabalho</string>
+    <string name="str_casa">Casa</string>
+    <string name="str_festa">Festa</string>
+    <string name="str_outro">Outro</string>
+    <string name="str_local_selecionar_um">Precisa selecionar um local</string>
 
     <!--    Valor do cigarro-->
     <string name="str_valor_maco_cigarro">Inserir o valor do maço do cigarro</string>
@@ -58,6 +105,18 @@
     <string name="str_virgula_moeda">,</string>
     <string name="str_valor_dezena">00</string>
     <string name="str_valor_centavo">00</string>
+
+    <!--    Questionario gatilhos-->
+    <string name="str_questionario_gatilho">Identificando gatilhos</string>
+    <string name="str_questionario_gatilho_questao1">, você teve uma recaída?</string>
+    <string name="str_questionario_gatilho_questao1_comp">Quanto cigarros fumou?</string>
+
+    <!--    Preciso Ajuda-->
+    <string name="str_preciso_ajuda">Botão de ajuda</string>
+    <string name="str_preciso_ajuda_ligar_para">Ligar para</string>
+    <string name="str_preciso_ajuda_ligacao_apoio">Contato de apoio</string>
+    <string name="str_preciso_ajuda_identificar_gatilhos">Identificar gatilhos</string>
+    <string name="str_preciso_ajuda_permissao_ligacao">Aceite a permissão para realizar a ligação</string>
 
     <!--    Teste Fargestrom-->
     <string name="str_teste_fargestrom">Teste de Fargeström</string>

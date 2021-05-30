@@ -15,8 +15,10 @@ public class PreMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pre_main);
         estado = EstadoSingleton.getInstance();
+        estado.syncUsuario();
         estado.getTabagistaAsync(documentSnapshot -> {
             Tabagista tabagista = documentSnapshot.toObject(Tabagista.class);
+            estado.setTabagista(tabagista);
             Intent proximaTela = new Intent(PreMainActivity.this, MainActivity.class);
             if (tabagista == null || tabagista.getContatoDeApoio() == null) {
                 proximaTela = new Intent(PreMainActivity.this, CadastroContatoApoioActivity.class);

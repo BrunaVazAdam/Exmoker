@@ -1,4 +1,4 @@
-package br.com.ifsul.bruna.exmoker;
+package br.com.ifsul.bruna.exmoker.steps;
 
 import android.view.ContextThemeWrapper;
 import android.view.View;
@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import br.com.ifsul.bruna.exmoker.R;
+import br.com.ifsul.bruna.exmoker.SeletorMesAnoDialog;
 import ernestoyaquello.com.verticalstepperform.Step;
 
 public class MesAnoStep extends Step<Calendar> {
@@ -19,7 +21,7 @@ public class MesAnoStep extends Step<Calendar> {
     private SimpleDateFormat formatadorDeData;
     private AppCompatActivity activityPai;
 
-    protected MesAnoStep(String title, AppCompatActivity activity) {
+    public MesAnoStep(String title, AppCompatActivity activity) {
         super(title);
         this.activityPai = activity;
         dataSelecionada = Calendar.getInstance();

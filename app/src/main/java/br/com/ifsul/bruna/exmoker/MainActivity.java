@@ -1,5 +1,6 @@
 package br.com.ifsul.bruna.exmoker;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -51,7 +52,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         floatingActionButtonAjuda.setOnClickListener(v -> {
-            // TODO: Tela de botão de ajuda
+            Intent itBotaoAjuda = new Intent(MainActivity.this, PrecisoAjudaActivity.class);
+            startActivity(itBotaoAjuda);
         });
     }
 

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.chip.ChipGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/lc_cg_locais"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:selectionRequired="true"
+    app:singleSelection="true">
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/lc_cp_escola"
+        style="@style/ChipChoiceCustom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_escola" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/lc_cp_trabalho"
+        style="@style/ChipChoiceCustom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_trabalho" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/lc_cp_casa"
+        style="@style/ChipChoiceCustom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_casa" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/lc_cp_festa"
+        style="@style/ChipChoiceCustom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_festa" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/lc_cp_outro"
+        style="@style/ChipChoiceCustom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_outro" />
+
+</com.google.android.material.chip.ChipGroup>

@@ -6,6 +6,9 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import br.com.ifsul.bruna.exmoker.colecoes.InformacoesAdicionais;
+import br.com.ifsul.bruna.exmoker.steps.MesAnoStep;
+import br.com.ifsul.bruna.exmoker.steps.QuantidadeStep;
+import br.com.ifsul.bruna.exmoker.steps.ValorCigarroStep;
 import ernestoyaquello.com.verticalstepperform.VerticalStepperFormView;
 import ernestoyaquello.com.verticalstepperform.listener.StepperFormListener;
 

@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/btb_home"
-        android:contentDescription="Home"
+        android:contentDescription="@string/str_menu_home"
         android:icon="@drawable/ic_home"
-        android:title="Home"
+        android:title="@string/str_menu_home"
         app:showAsAction="always" />
     <item
         android:id="@+id/btb_achievement"
-        android:contentDescription="Conquistas"
+        android:contentDescription="@string/str_menu_conquistas"
         android:icon="@drawable/ic_badge"
-        android:title="Conquistas"
+        android:title="@string/str_menu_conquistas"
         app:showAsAction="always" />
     <item
         android:id="@+id/itemEmpty"
@@ -19,15 +19,15 @@
         android:title="" />
     <item
         android:id="@+id/btb_chart"
-        android:contentDescription="Estatística"
+        android:contentDescription="@string/str_menu_estatistica"
         android:icon="@drawable/ic_bar_chart"
-        android:title="Estatística"
+        android:title="@string/str_menu_estatistica"
         app:showAsAction="always" />
     <item
         android:id="@+id/btb_info"
-        android:contentDescription="Info"
+        android:contentDescription="@string/str_menu_info"
         android:icon="@drawable/ic_info"
-        android:title="Info"
+        android:title="@string/str_menu_info"
         app:showAsAction="always" />
 
 </menu>

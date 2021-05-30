@@ -3,6 +3,7 @@
     package="br.com.ifsul.bruna.exmoker">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Exmoker">
-        <activity android:name=".MetodoParadaActivity"></activity>
+        <activity android:name=".QuestionarioGatilhosActivity" />
+        <activity android:name=".PrecisoAjudaActivity" />
+        <activity android:name=".MetodoParadaActivity" />
         <activity android:name=".ResultadoInformacoesActivity" />
         <activity android:name=".ResultadoFargestromActivity" />
         <activity android:name=".InformacoesAdicionaisActivity" />

@@ -65,6 +65,20 @@
         <item name="colorAccent">@color/exmoker</item>
     </style>
 
+    <style name="ChipChoiceCustom" parent="Widget.MaterialComponents.Chip.Filter">
+        <item name="android:textColor">@color/exmoker_darker</item>
+        <item name="checkedIconTint">@color/exmoker_darker</item>
+        <item name="chipBackgroundColor">@color/white</item>
+    </style>
+
+    <style name="ProgressBarCustom" parent="@style/Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="colorButtonNormal">#f50057</item>
+        <item name="colorControlActivated">@color/exmoker_darker</item>
+        <item name="colorControlHighlight">@color/exmoker</item>
+        <item name="android:progressDrawable">@drawable/custom_progress_bar</item>
+        <item name="android:minWidth">200dp</item>
+    </style>
+
     <style name="ActivityAnimations" parent="@android:style/Animation.Activity">
         <item name="android:activityOpenEnterAnimation">@anim/fade_in</item>
         <item name="android:activityOpenExitAnimation">@anim/fade_out</item>

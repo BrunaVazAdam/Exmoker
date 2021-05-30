@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:id="@+id/ra_rg_sim_nao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/ra_rb_sim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/white"
+            android:text="@string/str_sim"
+            android:textColor="@color/white" />
+
+        <RadioButton
+            android:id="@+id/ra_rb_nao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/white"
+            android:checked="true"
+            android:text="@string/str_nao"
+            android:textColor="@color/white" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/ra_tv_pergunta_comp"
+        style="@style/TextTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/str_questionario_gatilho_questao1_comp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/ra_ll_counter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/ra_bt_decrementa"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/ic_triangle_up"
+            android:rotation="-90" />
+
+        <TextView
+            android:id="@+id/ra_tv_quantidade"
+            style="@style/ValorEconomiaText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/str_quantidade_cigarros" />
+
+        <Button
+            android:id="@+id/ra_bt_incrementa"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/ic_triangle_up"
+            android:rotation="90" />
+    </LinearLayout>
+</LinearLayout>

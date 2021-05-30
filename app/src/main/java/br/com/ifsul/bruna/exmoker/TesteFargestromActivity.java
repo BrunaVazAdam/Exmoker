@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.Arrays;
 
 import br.com.ifsul.bruna.exmoker.colecoes.TesteFargestrom;
+import br.com.ifsul.bruna.exmoker.steps.QuantidadeStep;
+import br.com.ifsul.bruna.exmoker.steps.QuestaoFargestromStep;
 import ernestoyaquello.com.verticalstepperform.VerticalStepperFormView;
 import ernestoyaquello.com.verticalstepperform.listener.StepperFormListener;
 

@@ -1,4 +1,4 @@
-package br.com.ifsul.bruna.exmoker;
+package br.com.ifsul.bruna.exmoker.steps;
 
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import br.com.ifsul.bruna.exmoker.R;
 import ernestoyaquello.com.verticalstepperform.Step;
 
 public class QuantidadeStep extends Step<Integer> {
@@ -24,7 +25,7 @@ public class QuantidadeStep extends Step<Integer> {
         super(title);
     }
 
-    protected QuantidadeStep(String title, String descricao) {
+    public QuantidadeStep(String title, String descricao) {
         super(title);
         complementoDescricaoLegivel = descricao;
     }

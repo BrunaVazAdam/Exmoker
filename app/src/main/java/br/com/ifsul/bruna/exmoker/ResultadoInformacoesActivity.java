@@ -22,6 +22,7 @@ public class ResultadoInformacoesActivity extends AppCompatActivity {
     private Button btAvancar;
     private TextView tvEstimativaGastoTotal;
     private TextView tvEstimativaGastoDiario;
+    private TextView tvEstimativaGastoSemanal;
     private TextView tvEstimativaGastoMensal;
     private TextView tvEstimativaGastoAnual;
 
@@ -36,6 +37,7 @@ public class ResultadoInformacoesActivity extends AppCompatActivity {
             informacoesAdicionais = tabagista.getInformacoesAdicionais();
             tvEstimativaGastoTotal.setText(valorFormatter.format(calculaTotal()));
             tvEstimativaGastoDiario.setText(valorFormatter.format(calculaGastoDiario()));
+            tvEstimativaGastoSemanal.setText(valorFormatter.format(calculaSemanal()));
             tvEstimativaGastoMensal.setText(valorFormatter.format(calculaMensal()));
             tvEstimativaGastoAnual.setText(valorFormatter.format(calculaAnual()));
         });
@@ -52,6 +54,7 @@ public class ResultadoInformacoesActivity extends AppCompatActivity {
         btAvancar = findViewById(R.id.ri_bt_avancar);
         tvEstimativaGastoTotal = findViewById(R.id.ri_tv_estimativa_gasto_total);
         tvEstimativaGastoDiario = findViewById(R.id.ri_tv_estimativa_gasto_diario);
+        tvEstimativaGastoSemanal = findViewById(R.id.ri_tv_estimativa_gasto_semanal);
         tvEstimativaGastoMensal = findViewById(R.id.ri_tv_estimativa_gasto_mensal);
         tvEstimativaGastoAnual = findViewById(R.id.ri_tv_estimativa_gasto_anual);
     }
@@ -60,6 +63,10 @@ public class ResultadoInformacoesActivity extends AppCompatActivity {
         Double gastoPorCigarro = informacoesAdicionais.getPrecoCigarro() / informacoesAdicionais.getQtdCigarroNoMaco();
         Double gastoDiario = gastoPorCigarro * informacoesAdicionais.getQtdCigarrosPorDia();
         return gastoDiario;
+    }
+
+    private Double calculaSemanal() {
+        return calculaGastoDiario() * 7;
     }
 
     private Double calculaMensal() {

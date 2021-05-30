@@ -12,4 +12,5 @@ public class ColecoesChave {
     public static final String DATAINICIOTABAGISMO = "dataInicioTabagismo";
     public static final String PARADAGRADUAL = "paradaGradual";
     public static final String DATAPARADAGRADUAL = "dataParadaGradual";
+    public static final String EVENTOSDEAJUDA = "eventosDeAjuda";
 }

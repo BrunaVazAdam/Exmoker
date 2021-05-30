@@ -1,6 +1,7 @@
 package br.com.ifsul.bruna.exmoker.home;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.card.MaterialCardView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.mikhaellopez.circularimageview.CircularImageView;
@@ -23,6 +25,7 @@ import br.com.ifsul.bruna.exmoker.LoginActivity;
 import br.com.ifsul.bruna.exmoker.R;
 
 public class HomeFragment extends Fragment {
+    private MaterialCardView cardLocalizarUbs;
     private CircularImageView profileAvatar;
     private Button btOptionsMenu;
     private TextView tvGreeting;
@@ -52,12 +55,18 @@ public class HomeFragment extends Fragment {
             });
             popupMenu.show();
         });
+        cardLocalizarUbs.setOnClickListener(v -> {
+            Intent itBuscaMaps = new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("https://www.google.com/maps/search/?api=1&query=Unidade Básica de Saúde"));
+            startActivity(itBuscaMaps);
+        });
         carregaAvatar();
         carregaSaudacao();
         return v;
     }
 
     private void inicializaComponentes() {
+        cardLocalizarUbs = v.findViewById(R.id.ho_card_localizar_ubs);
         profileAvatar = v.findViewById(R.id.ho_profile_avatar);
         btOptionsMenu = v.findViewById(R.id.ho_bt_options_menu);
         tvGreeting = v.findViewById(R.id.ho_greeting);

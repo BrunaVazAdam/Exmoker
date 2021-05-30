@@ -14,6 +14,7 @@ import java.util.Map;
 
 import br.com.ifsul.bruna.exmoker.colecoes.ColecoesChave;
 import br.com.ifsul.bruna.exmoker.colecoes.ContatoDeApoio;
+import br.com.ifsul.bruna.exmoker.colecoes.EventoDeAjuda;
 import br.com.ifsul.bruna.exmoker.colecoes.InformacoesAdicionais;
 import br.com.ifsul.bruna.exmoker.colecoes.Tabagista;
 import br.com.ifsul.bruna.exmoker.colecoes.TesteFargestrom;
@@ -50,7 +51,7 @@ public class EstadoSingleton {
         return _instance;
     }
 
-    private Usuario syncUsuario() {
+    public Usuario syncUsuario() {
         db.collection(ColecoesChave.USUARIO).document(user.getUid())
                 .get()
                 .addOnSuccessListener(documentSnapshot -> {
@@ -59,7 +60,7 @@ public class EstadoSingleton {
         return usuario;
     }
 
-    private Tabagista syncTabagista() {
+    public Tabagista syncTabagista() {
         db.collection(ColecoesChave.TABAGISTA).document(user.getUid())
                 .get()
                 .addOnSuccessListener(documentSnapshot -> {
@@ -76,6 +77,22 @@ public class EstadoSingleton {
 
     public void getTabagistaAsync(OnSuccessListener<DocumentSnapshot> successListener) {
         db.collection(ColecoesChave.TABAGISTA).document(user.getUid()).get().addOnSuccessListener(successListener);
+    }
+
+    public Tabagista getTabagista() {
+        return tabagista;
+    }
+
+    public void setTabagista(Tabagista tabagista) {
+        this.tabagista = tabagista;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     public FirebaseAuth getAuthInstance() {
@@ -123,6 +140,15 @@ public class EstadoSingleton {
         db.collection(ColecoesChave.TABAGISTA)
                 .document(user.getUid())
                 .update(ColecoesChave.TESTESFARGESTROM, FieldValue.arrayUnion(testeFargestrom));
+    }
+
+    public void addEventoDeAjuda(EventoDeAjuda eventoDeAjuda) {
+        if (!isLogged) return;
+        Map<String, Object> data = new HashMap<>();
+        data.put(ColecoesChave.EVENTOSDEAJUDA, eventoDeAjuda);
+        db.collection(ColecoesChave.TABAGISTA)
+                .document(user.getUid())
+                .update(ColecoesChave.EVENTOSDEAJUDA, FieldValue.arrayUnion(eventoDeAjuda));
     }
 
     public void setInformacoesAdicionais(InformacoesAdicionais informacoesAdicionais) {
