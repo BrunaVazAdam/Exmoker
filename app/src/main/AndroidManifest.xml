@@ -12,10 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Exmoker">
+        <activity android:name=".estatisticas.EstatisticaEconomiaFinanceiraActivity"></activity>
+        <activity android:name=".estatisticas.EstatisticaDependenciaNicotinaActivity" />
         <activity android:name=".QuestionarioGatilhosActivity" />
         <activity android:name=".PrecisoAjudaActivity" />
         <activity android:name=".MetodoParadaActivity" />
-        <activity android:name=".ResultadoInformacoesActivity" />
         <activity android:name=".ResultadoFargestromActivity" />
         <activity android:name=".InformacoesAdicionaisActivity" />
         <activity android:name=".PreMainActivity" />

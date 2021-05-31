@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ResultadoInformacoesActivity">
+    android:orientation="vertical"
+    tools:context=".estatisticas.EstatisticaEconomiaFinanceiraActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="25dp">
+
+        <TextView
+            style="@style/Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/str_estatisticas_economia_financeira"
+            android:textColor="@color/exmoker_darker" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/cad_ca_divider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/exmoker_darker" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="25dp">
-
-            <TextView
-                style="@style/Title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/str_resultado_informacoes"
-                android:textColor="@color/exmoker_darker" />
-
-        </LinearLayout>
-
-        <View
-            android:id="@+id/cad_ca_divider"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/exmoker_darker" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
             android:orientation="vertical"
             android:padding="20dp">
 
@@ -63,6 +63,41 @@
 
                     <TextView
                         android:id="@+id/ri_tv_estimativa_gasto_total"
+                        style="@style/ValorEconomiaText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_marginBottom="20dp"
+                android:padding="20dp"
+                app:cardBackgroundColor="@color/exmoker"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        style="@style/EconomiaText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/str_estimativa_dinheiro_poupado"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/ri_tv_estimativa_dinheiro_poupado"
                         style="@style/ValorEconomiaText"
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
@@ -214,14 +249,6 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/ri_bt_avancar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/str_resultado_avancar"
-                android:textColor="@color/white"
-                app:backgroundTint="@color/exmoker"
-                app:cornerRadius="@dimen/border_radius_input" />
         </LinearLayout>
-    </LinearLayout>
-</ScrollView>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

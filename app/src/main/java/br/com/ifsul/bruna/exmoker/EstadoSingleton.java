@@ -10,7 +10,9 @@ import com.google.firebase.firestore.SetOptions;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import br.com.ifsul.bruna.exmoker.colecoes.ColecoesChave;
 import br.com.ifsul.bruna.exmoker.colecoes.ContatoDeApoio;
@@ -124,6 +126,15 @@ public class EstadoSingleton {
                 .set(data, SetOptions.merge());
     }
 
+    public void setFinalizacaoCadastro() {
+        if (!isLogged) return;
+        Map<String, Object> data = new HashMap<>();
+        data.put(ColecoesChave.DATAFINALIZACAOCADASTRO, new Date());
+        db.collection(ColecoesChave.TABAGISTA)
+                .document(user.getUid())
+                .set(data, SetOptions.merge());
+    }
+
     public void setQtdCigarrosDia(Integer qtdCigarrosDia) {
         if (!isLogged) return;
         db.collection(ColecoesChave.TABAGISTA)
@@ -166,4 +177,103 @@ public class EstadoSingleton {
                         informacoesAdicionais.getDataInicioTabagismo()
                 );
     }
+
+    public List<TesteFargestrom> getTestesFargestrom() {
+        return tabagista.getTestesFargestrom();
+    }
+
+    public Date getDataFinalizacaoCadastro() {
+        return tabagista.getDataFinalizacaoCadastro();
+    }
+
+
+    public Double calculaGastoPorCigarro() {
+        InformacoesAdicionais informacoesAdicionais = tabagista.getInformacoesAdicionais();
+        return informacoesAdicionais.getPrecoCigarro() / informacoesAdicionais.getQtdCigarroNoMaco();
+    }
+
+    public Double calculaGastoDiario() {
+        InformacoesAdicionais informacoesAdicionais = tabagista.getInformacoesAdicionais();
+        Double gastoDiario = calculaGastoPorCigarro() * informacoesAdicionais.getQtdCigarrosPorDia();
+        return gastoDiario;
+    }
+
+    public Double calculaSemanal() {
+        return calculaGastoDiario() * 7;
+    }
+
+    public Double calculaMensal() {
+        return calculaGastoDiario() * 30;
+    }
+
+    public Double calculaAnual() {
+        return calculaGastoDiario() * 365;
+    }
+
+    public Double calculaTotal() {
+        Date dataCadastro = tabagista.getDataFinalizacaoCadastro();
+        InformacoesAdicionais informacoesAdicionais = tabagista.getInformacoesAdicionais();
+        long difEmMili = Math.abs(dataCadastro.getTime() - informacoesAdicionais.getDataInicioTabagismo().getTime());
+        long qtdDeDiasFumando = TimeUnit.DAYS.convert(difEmMili, TimeUnit.MILLISECONDS);
+        return calculaGastoDiario() * qtdDeDiasFumando;
+    }
+
+    public Integer diasConsecutivosSemFumar() {
+        Date dataUltimoCigarro = tabagista.getDataFinalizacaoCadastro();
+        List<EventoDeAjuda> eventoDeAjudas = tabagista.getEventosDeAjuda();
+        if (eventoDeAjudas != null) {
+            for (EventoDeAjuda eventoDeAjuda : eventoDeAjudas) {
+                if (eventoDeAjuda.getFoiRecaida()) {
+                    dataUltimoCigarro = eventoDeAjuda.getDataDoEvento();
+                }
+            }
+        }
+        long difEmMili = Math.abs(new Date().getTime() - dataUltimoCigarro.getTime());
+        long qtdDeDiasSemFumar = TimeUnit.DAYS.convert(difEmMili, TimeUnit.MILLISECONDS);
+        return (int) qtdDeDiasSemFumar;
+    }
+
+    public Integer diasAteCadastro() {
+        Date dataCadastro = tabagista.getDataFinalizacaoCadastro();
+        long difEmMili = Math.abs(new Date().getTime() - dataCadastro.getTime());
+        long qtdDeDiasCadastro = TimeUnit.DAYS.convert(difEmMili, TimeUnit.MILLISECONDS);
+        return (int) qtdDeDiasCadastro;
+    }
+
+    public Integer calculaCigarrosEvitados() {
+        InformacoesAdicionais informacoesAdicionais = tabagista.getInformacoesAdicionais();
+        return informacoesAdicionais.getQtdCigarrosPorDia() * diasAteCadastro();
+    }
+
+    public Integer calculaCigarrosEvitadosTotal() {
+        return calculaCigarrosEvitados() - calculaCigarrosFumados();
+    }
+
+    public Integer calculaCigarrosFumados() {
+        List<EventoDeAjuda> eventoDeAjudas = tabagista.getEventosDeAjuda();
+        if (eventoDeAjudas == null) return 0;
+        Integer qtdCigarros = 0;
+        for (EventoDeAjuda eventoDeAjuda : eventoDeAjudas) {
+            if (eventoDeAjuda.getFoiRecaida()) {
+                qtdCigarros += eventoDeAjuda.getQuantidadeDeCigarros();
+            }
+        }
+        return qtdCigarros;
+    }
+
+    public Double calculaGastos() {
+        return calculaCigarrosFumados() * calculaGastoPorCigarro();
+    }
+
+    public Double calculaEconomia() {
+        Double economia = calculaGastoDiario() * diasAteCadastro();
+        return economia - calculaGastos();
+    }
+
+    public String getPrimeiroNome(String nomeCompleto) {
+        int primeiroEspaco = nomeCompleto.indexOf(' ');
+        if (primeiroEspaco == -1) return nomeCompleto;
+        return nomeCompleto.substring(0, primeiroEspaco);
+    }
+
 }

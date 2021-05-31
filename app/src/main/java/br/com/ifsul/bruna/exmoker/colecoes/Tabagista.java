@@ -6,9 +6,11 @@ import java.util.List;
 public class Tabagista {
     private Boolean paradaGradual;
     private Date dataParadaGradual;
+    private Date dataFinalizacaoCadastro;
     private ContatoDeApoio contatoDeApoio;
     private InformacoesAdicionais informacoesAdicionais;
     private List<TesteFargestrom> testesFargestrom;
+    private List<EventoDeAjuda> eventosDeAjuda;
 
     public Tabagista() {
     }
@@ -24,6 +26,18 @@ public class Tabagista {
 
     public Tabagista(List<TesteFargestrom> testesFargestrom) {
         this.testesFargestrom = testesFargestrom;
+    }
+
+    public Date getDataFinalizacaoCadastro() {
+        return dataFinalizacaoCadastro;
+    }
+
+    public void setDataFinalizacaoCadastro(Date dataFinalizacaoCadastro) {
+        this.dataFinalizacaoCadastro = dataFinalizacaoCadastro;
+    }
+
+    public List<EventoDeAjuda> getEventosDeAjuda() {
+        return eventosDeAjuda;
     }
 
     public ContatoDeApoio getContatoDeApoio() {

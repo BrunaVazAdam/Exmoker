@@ -5,6 +5,10 @@
     <string name="str_cigarro">cigarro</string>
     <string name="str_cigarros">cigarros</string>
     <string name="str_finalizar">Finalizar</string>
+    <string name="str_dinheiro_poupado">Dinheiro poupado</string>
+    <string name="str_cigarros_evitados">Cigarros evitados</string>
+    <string name="str_voce_esta">Você está a </string>
+    <string name="str_dias_sem_fumar"> dias sem fumar.</string>
     <string name="str_name">Nome</string>
     <string name="str_email">Email</string>
     <string name="str_senha">Senha</string>
@@ -31,6 +35,26 @@
 
     <!-- Estatistica -->
     <string name="str_estatisticas">Estatísticas</string>
+    <string name="str_estatisticas_nivel_dependencia">Nível de dependência à nicotina</string>
+    <string name="str_estatisticas_nivel_dependencia_mbaixa">M.Baixa</string>
+    <string name="str_estatisticas_nivel_dependencia_muito_baixa">Muito Baixa</string>
+    <string name="str_estatisticas_nivel_dependencia_baixa">Baixa</string>
+    <string name="str_estatisticas_nivel_dependencia_mod">Mod.</string>
+    <string name="str_estatisticas_nivel_dependencia_moderada">Moderada</string>
+    <string name="str_estatisticas_nivel_dependencia_elev">Elev.</string>
+    <string name="str_estatisticas_nivel_dependencia_elevada">Elevada</string>
+    <string name="str_estatisticas_nivel_dependencia_melev">M.Elev.</string>
+    <string name="str_estatisticas_nivel_dependencia_muito_elevada">Muito Elevada</string>
+    <string name="str_estatisticas_nivel_dependencia_legendas">
+        \n
+        \n M.Elev. : Muito Elevada
+        \n Elev.   : Elevada
+        \n Mod.    : Moderada
+        \n Baixa   : Baixa
+        \n M.Baixa.: Muito Baixa
+    </string>
+
+    <string name="str_estatisticas_economia_financeira">Economia financeira</string>
 
     <!-- Menu -->
     <string name="str_menu_home">Home</string>
@@ -66,11 +90,12 @@
 
     <!--    Resultado Infomacoes-->
     <string name="str_resultado_informacoes">Benefícios financeiros ao parar de fumar</string>
-    <string name="str_dinheiro_gasto_total">Estimativa de gastos com o cigarro até o momento:</string>
-    <string name="str_dinheiro_gasto_diario">Economia diária:</string>
-    <string name="str_dinheiro_gasto_semanal">Economia semanal:</string>
-    <string name="str_dinheiro_gasto_mensal">Economia mensal:</string>
-    <string name="str_dinheiro_gasto_anual">Economia anual:</string>
+    <string name="str_dinheiro_gasto_total">Estimativa de gastos com o cigarro até tornar-se Exmoker:</string>
+    <string name="str_estimativa_dinheiro_poupado">Estimativa de dinheiro poupado:</string>
+    <string name="str_dinheiro_gasto_diario">Estimativa de economia diária:</string>
+    <string name="str_dinheiro_gasto_semanal">Estimativa de economia semanal:</string>
+    <string name="str_dinheiro_gasto_mensal">Estimativa de economia mensal:</string>
+    <string name="str_dinheiro_gasto_anual">Estimativa de economia anual:</string>
 
     <!--    Intensidade-->
     <string name="str_pergunta_intensidade">Quão intensa é a sua vontade de fumar?</string>

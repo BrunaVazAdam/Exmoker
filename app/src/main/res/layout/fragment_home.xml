@@ -25,15 +25,29 @@
             app:civ_border_width="3dp"
             app:civ_shadow="false" />
 
-        <TextView
-            android:id="@+id/ho_greeting"
-            style="@style/Title"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
             android:layout_weight="1"
-            android:padding="10dp"
-            android:text="Olá..." />
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/ho_greeting"
+                style="@style/Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Olá..."
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/ho_tv_dias_sem_fumar"
+                style="@style/Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 " />
+
+        </LinearLayout>
 
         <Button
             android:id="@+id/ho_bt_options_menu"
@@ -93,15 +107,15 @@
                             style="@style/Title"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Dinheiro Poupado" />
+                            android:text="@string/str_dinheiro_poupado" />
 
                         <TextView
-                            android:id="@+id/textView6"
+                            android:id="@+id/ho_tv_dinheiro_poupado"
                             style="@style/Title"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="R$ 120,00"
-                            android:textSize="28sp" />
+                            android:text="R$0,00"
+                            android:textSize="24sp" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -144,15 +158,15 @@
                             style="@style/Title"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Cigarros Evitados" />
+                            android:text="@string/str_cigarros_evitados" />
 
                         <TextView
-                            android:id="@+id/textView8"
+                            android:id="@+id/ho_tv_cigarros_evitados"
                             style="@style/Title"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="180 cigarros"
-                            android:textSize="28sp" />
+                            android:text="0 cigarros"
+                            android:textSize="24sp" />
                     </LinearLayout>
 
                 </LinearLayout>

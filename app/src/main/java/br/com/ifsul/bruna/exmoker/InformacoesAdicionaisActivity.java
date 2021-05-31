@@ -35,7 +35,7 @@ public class InformacoesAdicionaisActivity extends AppCompatActivity implements 
                 .displayBottomNavigation(false)
                 .stepNextButtonText(getString(R.string.str_proxima_questao))
                 .includeConfirmationStep(false)
-                .lastStepNextButtonText(getString(R.string.str_ver_resultado_teste))
+                .lastStepNextButtonText(getString(R.string.str_resultado_avancar))
                 .init();
     }
 
@@ -55,8 +55,8 @@ public class InformacoesAdicionaisActivity extends AppCompatActivity implements 
                 cigarrosNoMacoStep.getStepData(),
                 mesAnoInicioTabagismoStep.getStepData().getTime()
         ));
-        Intent itResultadoInformacoes = new Intent(InformacoesAdicionaisActivity.this, ResultadoInformacoesActivity.class);
-        startActivity(itResultadoInformacoes);
+        Intent itPreMain = new Intent(InformacoesAdicionaisActivity.this, PreMainActivity.class);
+        startActivity(itPreMain);
         finish();
     }
 

@@ -33,7 +33,7 @@ public class QuestionarioGatilhosActivity extends AppCompatActivity implements S
         setContentView(R.layout.activity_questionario_gatilhos);
         estado = EstadoSingleton.getInstance();
         auth = FirebaseAuth.getInstance();
-        nome = getPrimeiroNome(auth.getCurrentUser().getDisplayName());
+        nome = estado.getPrimeiroNome(auth.getCurrentUser().getDisplayName());
         inicializaQuestoes();
         verticalStepperForm = findViewById(R.id.stepper_form_questionario_gatilhos);
         verticalStepperForm
@@ -59,10 +59,6 @@ public class QuestionarioGatilhosActivity extends AppCompatActivity implements S
         localStep = new LocalStep(getString(R.string.str_local_gatilho));
     }
 
-    private String getPrimeiroNome(String nomeCompleto) {
-        int primeiroEspaco = nomeCompleto.indexOf(' ');
-        return nomeCompleto.substring(0, primeiroEspaco);
-    }
 
     @Override
     public void onCompletedForm() {

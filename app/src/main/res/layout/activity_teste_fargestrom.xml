@@ -44,6 +44,7 @@
             android:layout_height="match_parent"
             app:form_circle_background_color="@color/white"
             app:form_circle_completed_background_color="@color/white"
+            app:form_circle_error_background_color="@color/white"
             app:form_circle_text_color="@color/exmoker_darker"
             app:form_next_button_background_color="@color/exmoker_darker"
             app:form_next_button_pressed_background_color="@color/exmoker_darker"

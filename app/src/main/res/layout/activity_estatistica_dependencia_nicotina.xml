@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".estatisticas.EstatisticaDependenciaNicotinaActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="25dp">
+
+        <TextView
+            style="@style/Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/str_estatisticas_nivel_dependencia"
+            android:textColor="@color/exmoker_darker" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/cad_ca_divider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/exmoker_darker" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <com.jjoe64.graphview.GraphView
+                android:id="@+id/graph_nivel_dependencia"
+                android:layout_width="match_parent"
+                android:layout_height="200dip" />
+
+            <TextView
+                android:id="@+id/textView13"
+                style="@style/Text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/str_estatisticas_nivel_dependencia_legendas"
+                android:textColor="@color/exmoker_darker" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

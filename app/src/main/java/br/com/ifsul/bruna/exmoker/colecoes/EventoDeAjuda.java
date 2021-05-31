@@ -1,8 +1,11 @@
 package br.com.ifsul.bruna.exmoker.colecoes;
 
+import java.util.Date;
 import java.util.List;
 
 public class EventoDeAjuda {
+
+    private Date dataDoEvento;
     private Boolean foiRecaida;
     private Integer quantidadeDeCigarros;
     private Integer intensidadeDaAbstinencia;
@@ -18,6 +21,11 @@ public class EventoDeAjuda {
         this.intensidadeDaAbstinencia = intensidadeDaAbstinencia;
         this.gatilhos = gatilhos;
         this.local = local;
+        this.dataDoEvento = new Date();
+    }
+
+    public Date getDataDoEvento() {
+        return dataDoEvento;
     }
 
     public Boolean getFoiRecaida() {
