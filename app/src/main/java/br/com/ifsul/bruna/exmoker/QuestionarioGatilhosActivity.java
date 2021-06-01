@@ -70,6 +70,7 @@ public class QuestionarioGatilhosActivity extends AppCompatActivity implements S
                 localStep.getStepData()
         );
         estado.addEventoDeAjuda(eventoDeAjuda);
+        estado.syncTabagista();
         Intent itMain = new Intent(QuestionarioGatilhosActivity.this, MainActivity.class);
         startActivity(itMain);
         finish();

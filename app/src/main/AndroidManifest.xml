@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Exmoker">
-        <activity android:name=".estatisticas.EstatisticaEconomiaFinanceiraActivity"></activity>
+        <activity android:name=".estatisticas.EstatisticaGatilhosActivity"></activity>
+        <activity android:name=".estatisticas.EstatisticaEconomiaFinanceiraActivity" />
         <activity android:name=".estatisticas.EstatisticaDependenciaNicotinaActivity" />
         <activity android:name=".QuestionarioGatilhosActivity" />
         <activity android:name=".PrecisoAjudaActivity" />

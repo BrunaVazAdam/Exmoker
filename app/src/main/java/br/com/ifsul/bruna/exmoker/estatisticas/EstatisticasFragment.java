@@ -17,6 +17,7 @@ public class EstatisticasFragment extends Fragment {
 
     private MaterialCardView cardNivelDependencia;
     private MaterialCardView cardEconomiaFinanceira;
+    private MaterialCardView cardGatilhos;
     private View v;
 
     @Override
@@ -32,11 +33,16 @@ public class EstatisticasFragment extends Fragment {
             Intent itEconomiaFinanceira = new Intent(getContext(), EstatisticaEconomiaFinanceiraActivity.class);
             startActivity(itEconomiaFinanceira);
         });
+        cardGatilhos.setOnClickListener(v -> {
+            Intent itGatilhos = new Intent(getContext(), EstatisticaGatilhosActivity.class);
+            startActivity(itGatilhos);
+        });
         return v;
     }
 
     private void inicializaComponentes() {
         cardNivelDependencia = v.findViewById(R.id.est_card_nivel_dependencia);
         cardEconomiaFinanceira = v.findViewById(R.id.est_card_economia_financeira);
+        cardGatilhos = v.findViewById(R.id.est_card_gatilhos);
     }
 }

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".estatisticas.EstatisticaDependenciaNicotinaActivity">
+    tools:context=".estatisticas.EstatisticaGatilhosActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
             style="@style/Title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/str_estatisticas_nivel_dependencia"
+            android:text="@string/str_relatorio_gatilhos"
             android:textColor="@color/exmoker_darker" />
 
     </LinearLayout>
@@ -35,11 +35,37 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:clipChildren="false"
             android:orientation="vertical"
             android:padding="20dp">
 
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pie_chart_gatilhos"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="50dp">
+
+            </com.github.mikephil.charting.charts.PieChart>
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pie_chart_locais"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="70dp">
+
+            </com.github.mikephil.charting.charts.PieChart>
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/str_intensidade_vontade"
+                android:textColor="@color/exmoker_darker"
+                android:textSize="20sp" />
+
             <com.github.mikephil.charting.charts.LineChart
-                android:id="@+id/line_chart_nivel_dependencia"
+                android:id="@+id/line_chart_intensidade"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
                 android:layout_marginBottom="20dp">
@@ -50,10 +76,9 @@
                 android:id="@+id/textView15"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/str_estatisticas_nivel_dependencia_legendas"
+                android:text="@string/str_intensidade_descricao"
                 android:textColor="@color/exmoker_darker"
                 android:textSize="14sp" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
-
 </LinearLayout>

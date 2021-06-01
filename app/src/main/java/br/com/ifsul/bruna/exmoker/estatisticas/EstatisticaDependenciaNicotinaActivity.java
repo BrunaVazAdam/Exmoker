@@ -1,17 +1,17 @@
 package br.com.ifsul.bruna.exmoker.estatisticas;
 
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.jjoe64.graphview.DefaultLabelFormatter;
-import com.jjoe64.graphview.GraphView;
-import com.jjoe64.graphview.series.DataPoint;
-import com.jjoe64.graphview.series.LineGraphSeries;
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.formatter.ValueFormatter;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -21,82 +21,72 @@ import br.com.ifsul.bruna.exmoker.colecoes.TesteFargestrom;
 
 public class EstatisticaDependenciaNicotinaActivity extends AppCompatActivity {
 
-    private GraphView graphNivelDependencia;
+    private LineChart lineChartNivelDependencia;
     private SimpleDateFormat formatadorDeData;
     private EstadoSingleton estado;
+    private ArrayList<Entry> testesFargestrom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_estatistica_dependencia_nicotina);
         formatadorDeData = new SimpleDateFormat("dd/MM");
+        testesFargestrom = new ArrayList<>();
+        lineChartNivelDependencia = findViewById(R.id.line_chart_nivel_dependencia);
         estado = EstadoSingleton.getInstance();
-        graphNivelDependencia = findViewById(R.id.graph_nivel_dependencia);
-        inicializaGrafico();
+        inicializaChartNivelDependencia();
     }
 
-    private void inicializaGrafico() {
+    private void inicializaChartNivelDependencia() {
         List<TesteFargestrom> testes = estado.getTestesFargestrom();
-        Log.d("DEBUG", "Testes6: " + testes.size());
-//        DataPoint[] dataPoints = new DataPoint[testes.size()];
-//        for (int i = 0; i < testes.size(); i++) {
-//            TesteFargestrom teste = testes.get(i);
-//            Log.d("DEBUG", "Testes3: " + teste.getDataDoTeste());
-//            dataPoints[i] = new DataPoint(teste.getDataDoTeste().getTime(), resultadoFargestromParaIntensidade(teste.getResultado()));
-//        }
-        Calendar calendar = Calendar.getInstance();
-        Date d1 = calendar.getTime();
-        calendar.add(Calendar.DATE, 1);
-        Date d2 = calendar.getTime();
-        calendar.add(Calendar.DATE, 1);
-        Date d3 = calendar.getTime();
-        calendar.add(Calendar.DATE, 4);
-        Date d4 = calendar.getTime();
-        calendar.add(Calendar.DATE, 1);
-        Date d5 = calendar.getTime();
-        calendar.add(Calendar.DATE, 1);
-        Date d6 = calendar.getTime();
-        DataPoint[] dataPoints = new DataPoint[]{
-                new DataPoint(d1.getTime(), 2),
-                new DataPoint(d2.getTime(), 5),
-                new DataPoint(d3.getTime(), 3),
-                new DataPoint(d4.getTime(), 4)
-        };
-        LineGraphSeries<DataPoint> series = new LineGraphSeries<>(dataPoints);
-        series.setColor(getResources().getColor(R.color.exmoker_darker));
-        series.setDrawDataPoints(true);
-        series.setDataPointsRadius(15f);
-        graphNivelDependencia.addSeries(series);
-        graphNivelDependencia.getGridLabelRenderer()
-                .setLabelFormatter(new DefaultLabelFormatter() {
-                    @Override
-                    public String formatLabel(double value, boolean isValueX) {
-                        if (isValueX) {
-                            return formatadorDeData.format(new Date((long) value));
-                        } else {
-                            return getIntensidadeDescricao((int) value);
-                        }
-                    }
-                });
+        for (TesteFargestrom teste : testes) {
+            testesFargestrom.add(new Entry(
+                    teste.getDataDoTeste().getTime(),
+                    resultadoFargestromParaIntensidade(teste.getResultado())
+            ));
+        }
+        LineDataSet dataSet = new LineDataSet(testesFargestrom, "");
+        dataSet.setDrawCircles(true);
+        dataSet.setDrawCircleHole(false);
+        dataSet.setDrawValues(false);
+        dataSet.setLineWidth(2);
+        dataSet.setColor(getResources().getColor(R.color.exmoker_darker));
+        dataSet.setCircleColor(getResources().getColor(R.color.exmoker_darker));
+        dataSet.setMode(LineDataSet.Mode.CUBIC_BEZIER);
+        dataSet.setDrawFilled(true);
+        dataSet.setFillDrawable(getDrawable(R.drawable.exmoker_gradient));
+        dataSet.setValueFormatter(new ValueFormatter() {
+            @Override
+            public String getFormattedValue(float value) {
+                return formatadorDeData.format(new Date((long) value));
+            }
+        });
+        LineData data = new LineData(dataSet);
 
-        graphNivelDependencia.getGridLabelRenderer()
-                .setNumHorizontalLabels(4);
-        graphNivelDependencia.getGridLabelRenderer().setNumVerticalLabels(5);
-        graphNivelDependencia.getGridLabelRenderer()
-                .setHumanRounding(false);
-        graphNivelDependencia.getViewport().setXAxisBoundsManual(true);
-        calendar.setTime(d1);
-        calendar.add(Calendar.DATE, -1);
-        graphNivelDependencia.getViewport().setMinX(calendar.getTimeInMillis());
-        calendar.setTime(d4);
-        calendar.add(Calendar.DATE, 1);
-        graphNivelDependencia.getViewport().setMaxX(calendar.getTimeInMillis());
-        graphNivelDependencia.getViewport().setYAxisBoundsManual(true);
-        graphNivelDependencia.getViewport().setMinY(1);
-        graphNivelDependencia.getViewport().setMaxY(5);
-        graphNivelDependencia.getViewport().setScrollable(true);
-
+        lineChartNivelDependencia.getXAxis().setValueFormatter(new ValueFormatter() {
+            @Override
+            public String getFormattedValue(float value) {
+                return formatadorDeData.format(new Date((long) value));
+            }
+        });
+        lineChartNivelDependencia.getAxisLeft().setValueFormatter(new ValueFormatter() {
+            @Override
+            public String getFormattedValue(float value) {
+                return getIntensidadeDescricao((int) value);
+            }
+        });
+        lineChartNivelDependencia.getAxisRight().setEnabled(false);
+        lineChartNivelDependencia.getAxisLeft().setAxisMinimum(1);
+        lineChartNivelDependencia.getAxisLeft().setAxisMaximum(5);
+        lineChartNivelDependencia.getAxisLeft().setGranularity(1.0f);
+        lineChartNivelDependencia.getAxisLeft().setGranularityEnabled(true);
+        lineChartNivelDependencia.getLegend().setEnabled(false);
+        lineChartNivelDependencia.setData(data);
+        lineChartNivelDependencia.setPinchZoom(false);
+        lineChartNivelDependencia.getDescription().setEnabled(false);
     }
+
+
 
     private Integer resultadoFargestromParaIntensidade(Integer resultado) {
         Integer intensidade = 0;

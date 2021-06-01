@@ -46,15 +46,15 @@
     <string name="str_estatisticas_nivel_dependencia_melev">M.Elev.</string>
     <string name="str_estatisticas_nivel_dependencia_muito_elevada">Muito Elevada</string>
     <string name="str_estatisticas_nivel_dependencia_legendas">
-        \n
-        \n M.Elev. : Muito Elevada
-        \n Elev.   : Elevada
-        \n Mod.    : Moderada
-        \n Baixa   : Baixa
+        \n M.Elev.: Muito Elevada
+        \n Elev.: Elevada
+        \n Mod.: Moderada
+        \n Baixa: Baixa
         \n M.Baixa.: Muito Baixa
     </string>
 
     <string name="str_estatisticas_economia_financeira">Economia financeira</string>
+    <string name="str_estatisticas_gatilhos">Gatilhos</string>
 
     <!-- Menu -->
     <string name="str_menu_home">Home</string>
@@ -101,7 +101,7 @@
     <string name="str_pergunta_intensidade">Quão intensa é a sua vontade de fumar?</string>
     <string name="str_muito_baixa">Muito baixa</string>
     <string name="str_baixa">Baixa</string>
-    <string name="str_media">Media</string>
+    <string name="str_media">Média</string>
     <string name="str_alta">Alta</string>
     <string name="str_muito_alta">Muito alta</string>
 
@@ -112,6 +112,16 @@
     <string name="str_aumento_alimentacao">Aumento do consumo alimentar</string>
     <string name="str_sintomas_abstinencia">Sintomas da abstinência</string>
     <string name="str_gatilhos_maior_zero">Precisa selecionar algum gatilho</string>
+
+    <string name="str_relatorio_gatilhos">Relatório de gatilhos</string>
+    <string name="str_frequencia_gatilhos">Frequência dos Gatilhos</string>
+    <string name="str_frequencia_local">Frequência dos Locais</string>
+    <string name="str_intensidade_vontade">Intensidade da vontade de fumar</string>
+    <string name="str_intensidade_descricao">1 - Muito baixa
+    \n2 - Baixa
+    \n3 - Média
+    \n4 - Alta
+    \n5 - Muito alta</string>
 
     <!--   Local Gatilhos-->
     <string name="str_local_gatilho">Qual o local que ocorreu a vontade de fumar?</string>
