@@ -281,4 +281,8 @@ public class EstadoSingleton {
         return nomeCompleto.substring(0, primeiroEspaco);
     }
 
+    public String getPrimeiroNomeUser() {
+        return getPrimeiroNome(user.getDisplayName());
+    }
+
 }
