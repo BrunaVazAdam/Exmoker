@@ -107,7 +107,8 @@
                             style="@style/Title"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/str_dinheiro_poupado" />
+                            android:text="@string/str_dinheiro_poupado"
+                            android:textSize="20sp" />
 
                         <TextView
                             android:id="@+id/ho_tv_dinheiro_poupado"
@@ -158,7 +159,8 @@
                             style="@style/Title"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/str_cigarros_evitados" />
+                            android:text="@string/str_cigarros_evitados"
+                            android:textSize="20sp" />
 
                         <TextView
                             android:id="@+id/ho_tv_cigarros_evitados"
@@ -209,7 +211,8 @@
                             style="@style/Title"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Localizar Unidades Básicas de Saúde" />
+                            android:text="Localizar Unidades Básicas de Saúde"
+                            android:textSize="20sp" />
 
                     </LinearLayout>
 

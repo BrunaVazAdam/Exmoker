@@ -218,7 +218,7 @@ public class EstadoSingleton {
         return calculaGastoDiario() * qtdDeDiasFumando;
     }
 
-    public Integer diasConsecutivosSemFumar() {
+    public Date getDataUltimoCigarro() {
         Date dataUltimoCigarro = tabagista.getDataFinalizacaoCadastro();
         List<EventoDeAjuda> eventoDeAjudas = tabagista.getEventosDeAjuda();
         if (eventoDeAjudas != null) {
@@ -228,6 +228,11 @@ public class EstadoSingleton {
                 }
             }
         }
+        return dataUltimoCigarro;
+    }
+
+    public Integer diasConsecutivosSemFumar() {
+        Date dataUltimoCigarro = getDataUltimoCigarro();
         long difEmMili = Math.abs(new Date().getTime() - dataUltimoCigarro.getTime());
         long qtdDeDiasSemFumar = TimeUnit.DAYS.convert(difEmMili, TimeUnit.MILLISECONDS);
         return (int) qtdDeDiasSemFumar;

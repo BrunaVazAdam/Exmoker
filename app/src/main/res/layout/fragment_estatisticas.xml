@@ -36,6 +36,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
             android:orientation="vertical"
             android:padding="35dp">
 
@@ -117,7 +118,35 @@
                         style="@style/Title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/str_estatisticas_gatilhos"
+                        android:text="@string/str_relatorio_gatilhos"
+                        android:textSize="24sp" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/est_card_beneficios_saude"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="35dp"
+                app:cardBackgroundColor="@color/exmoker"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:baselineAligned="true"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="15dp"
+                    android:textAlignment="center">
+
+                    <TextView
+                        style="@style/Title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/str_estatistiscas_beneficios_saude"
                         android:textSize="24sp" />
 
                 </LinearLayout>

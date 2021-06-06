@@ -64,12 +64,26 @@
                         android:layout_weight="1"
                         android:orientation="vertical">
 
-                        <TextView
-                            style="@style/TextBold"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/str_torne_se_exmoker"
-                            android:textColor="@color/exmoker_darker" />
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/TextBold"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/str_torne_se_exmoker"
+                                android:textColor="@color/exmoker_darker" />
+
+                            <View
+                                android:id="@+id/view4"
+                                android:layout_width="16sp"
+                                android:layout_height="16sp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/ic_share" />
+                        </LinearLayout>
 
                         <TextView
                             android:id="@+id/textView12"
@@ -157,7 +171,7 @@
                         android:orientation="horizontal">
 
                         <ProgressBar
-                            android:id="@+id/progressBar2"
+                            android:id="@+id/conq_pg_semana"
                             style="@style/ProgressBarCustom"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -167,7 +181,7 @@
                             android:progressTint="@color/exmoker_darker" />
 
                         <TextView
-                            android:id="@+id/textView112"
+                            android:id="@+id/conq_tv_semana"
                             style="@style/TextBold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"

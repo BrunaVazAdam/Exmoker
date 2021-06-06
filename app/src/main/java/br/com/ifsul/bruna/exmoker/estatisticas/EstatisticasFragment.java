@@ -18,6 +18,7 @@ public class EstatisticasFragment extends Fragment {
     private MaterialCardView cardNivelDependencia;
     private MaterialCardView cardEconomiaFinanceira;
     private MaterialCardView cardGatilhos;
+    private MaterialCardView cardBeneficiosSaude;
     private View v;
 
     @Override
@@ -37,6 +38,10 @@ public class EstatisticasFragment extends Fragment {
             Intent itGatilhos = new Intent(getContext(), EstatisticaGatilhosActivity.class);
             startActivity(itGatilhos);
         });
+        cardBeneficiosSaude.setOnClickListener(v -> {
+            Intent itBeneficiosSaude = new Intent(getContext(), EstatisticaBeneficioSaude.class);
+            startActivity(itBeneficiosSaude);
+        });
         return v;
     }
 
@@ -44,5 +49,6 @@ public class EstatisticasFragment extends Fragment {
         cardNivelDependencia = v.findViewById(R.id.est_card_nivel_dependencia);
         cardEconomiaFinanceira = v.findViewById(R.id.est_card_economia_financeira);
         cardGatilhos = v.findViewById(R.id.est_card_gatilhos);
+        cardBeneficiosSaude = v.findViewById(R.id.est_card_beneficios_saude);
     }
 }

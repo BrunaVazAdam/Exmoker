@@ -1,15 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".informacoes.InformacoesFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Informacoes" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="25dp">
 
-</FrameLayout>
+        <TextView
+            style="@style/Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/str_secao_informativa"
+            android:textColor="@color/exmoker_darker" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/cad_ca_divider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/exmoker_darker" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/textView13"
+                style="@style/TextTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:text="Benefícios ao parar de fumar"
+                android:textColor="@color/exmoker_darker"
+                android:textStyle="bold" />
+
+            <com.baoyachi.stepview.VerticalStepView
+                android:id="@+id/info_sp_infos_beneficios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp" />
+
+            <TextView
+                style="@style/TextTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:text="Malefícios do tabagismo"
+                android:textColor="@color/exmoker_darker"
+                android:textStyle="bold" />
+
+            <com.baoyachi.stepview.VerticalStepView
+                android:id="@+id/info_sp_infos_maleficios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </com.baoyachi.stepview.VerticalStepView>
+
+            <LinearLayout
+                android:id="@+id/ll_site_inca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="50dp">
+
+                <TextView
+                    style="@style/TextBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Para mais informações, acesse o site do INCA."
+                    android:textColor="@color/exmoker_darker" />
+
+                <View
+                    android:layout_width="14sp"
+                    android:layout_height="14sp"
+                    android:background="@drawable/ic_foreign" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

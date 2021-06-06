@@ -55,6 +55,9 @@
 
     <string name="str_estatisticas_economia_financeira">Economia financeira</string>
     <string name="str_estatisticas_gatilhos">Gatilhos</string>
+    <string name="str_estatistiscas_beneficios_saude">Benefícios à saúde</string>
+
+    <string name="str_secao_informativa">Seção informativa</string>
 
     <!-- Menu -->
     <string name="str_menu_home">Home</string>
