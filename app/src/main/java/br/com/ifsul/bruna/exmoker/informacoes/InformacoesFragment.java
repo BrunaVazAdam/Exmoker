@@ -47,7 +47,7 @@ public class InformacoesFragment extends Fragment {
         informacoesBeneficios.add("Após 20 minutos, a pressão sanguínea e a pulsação voltam ao normal.");
         informacoesBeneficios.add("Após 2 horas, não há mais nicotina circulando no sangue");
         informacoesBeneficios.add("Após 8 horas, o nível de oxigênio no sangue se normaliza.");
-        informacoesBeneficios.add("Após 24 horas, os pulmões ja funcionam melhor.");
+        informacoesBeneficios.add("Após 24 horas, os pulmões já funcionam melhor.");
         informacoesBeneficios.add("Após 2 dias, o olfato já sente melhor os cheiros e o paladar percebe melhor a comida.");
         informacoesBeneficios.add("Após 3 semanas, a respiração se torna mais fácil, e a circulação melhora.");
         informacoesBeneficios.add("Após 1 ano, o risco de morte por infarto é reduzido à metade.");

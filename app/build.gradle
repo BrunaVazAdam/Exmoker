@@ -46,6 +46,7 @@ dependencies {
     implementation 'com.ernestoyaquello.stepperform:vertical-stepper-form:2.4.1'
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
     implementation 'com.github.baoyachi:StepView:1.9'
+    implementation 'com.github.vipulasri:timelineview:1.1.5'
 
     implementation platform('com.google.firebase:firebase-bom:26.7.0')
     implementation 'com.google.firebase:firebase-analytics'

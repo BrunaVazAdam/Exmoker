@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:fillViewport="true"
     android:orientation="vertical"
     tools:context=".estatisticas.EstatisticaBeneficioSaude">
 
@@ -34,10 +35,25 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:orientation="vertical"
             android:padding="20dp">
 
+            <TextView
+                android:id="@+id/tv_progresso_qtd"
+                style="@style/TextBold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/exmoker_darker"
+                android:textSize="24sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_beneficios"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:clipToPadding="false"
+                tools:listitem="@layout/item_progresso" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
+
 </LinearLayout>
