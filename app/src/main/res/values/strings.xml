@@ -52,6 +52,7 @@
         \n Baixa: Baixa
         \n M.Baixa.: Muito Baixa
     </string>
+    <string name="str_novo_teste_fargestrom">Realizar o teste novamente</string>
 
     <string name="str_estatisticas_economia_financeira">Economia financeira</string>
     <string name="str_estatisticas_gatilhos">Gatilhos</string>

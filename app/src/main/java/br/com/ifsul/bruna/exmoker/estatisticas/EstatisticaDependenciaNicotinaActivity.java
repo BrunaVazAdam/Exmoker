@@ -1,6 +1,8 @@
 package br.com.ifsul.bruna.exmoker.estatisticas;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,10 +19,12 @@ import java.util.List;
 
 import br.com.ifsul.bruna.exmoker.EstadoSingleton;
 import br.com.ifsul.bruna.exmoker.R;
+import br.com.ifsul.bruna.exmoker.TesteFargestromActivity;
 import br.com.ifsul.bruna.exmoker.colecoes.TesteFargestrom;
 
 public class EstatisticaDependenciaNicotinaActivity extends AppCompatActivity {
 
+    private Button btTesteFargestrom;
     private LineChart lineChartNivelDependencia;
     private SimpleDateFormat formatadorDeData;
     private EstadoSingleton estado;
@@ -33,8 +37,14 @@ public class EstatisticaDependenciaNicotinaActivity extends AppCompatActivity {
         formatadorDeData = new SimpleDateFormat("dd/MM");
         testesFargestrom = new ArrayList<>();
         lineChartNivelDependencia = findViewById(R.id.line_chart_nivel_dependencia);
+        btTesteFargestrom = findViewById(R.id.bt_novo_teste_fargestrom);
         estado = EstadoSingleton.getInstance();
         inicializaChartNivelDependencia();
+
+        btTesteFargestrom.setOnClickListener(v -> {
+            Intent itTesteFargestrom = new Intent(EstatisticaDependenciaNicotinaActivity.this, TesteFargestromActivity.class);
+            startActivity(itTesteFargestrom);
+        });
     }
 
     private void inicializaChartNivelDependencia() {
